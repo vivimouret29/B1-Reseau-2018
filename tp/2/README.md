@@ -320,10 +320,9 @@ Toujours par 2 :
 Bon ok vous savez définir des IPs à la main. Mais pour être dans le réseau Ingésup, vous l'avez jamais fait.  
 C'est le **serveur DHCP** d'Ingésup qui vous a donné une IP.   
 
-Afficher : 
-* l'adresse IP du serveur DHCP du réseau WiFi
+* afficher l'adresse IP du serveur DHCP du réseau WiFi
 * cette adresse a une durée de vie limitée. C'est le principe du ***bail DHCP*** (ou *DHCP lease*). Trouver la date d'expiration de votre bail DHCP
-* renseignez-vous un peu sur le fonctionnement de DHCP. On aura un cours là dessus :)
+* renseignez-vous un peu sur le fonctionnement de DHCP dans les grandes lignes. On aura un cours là dessus :)
 * demandez une nouvelle adresse IP (en ligne de commande)
 
 ## 2. DNS
