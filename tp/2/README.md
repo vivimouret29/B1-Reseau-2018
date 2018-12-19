@@ -1,10 +1,8 @@
 # B1 Réseau 2018 - TP2
 
-Lien vers [le support de cours](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399).
-
 # Notions vues avant le TP
 
-* Manipulations IP et masque (avec le [binaire](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#binaire))
+* Manipulations IP et masque (avec le [binaire](./lexique.md#binaire))
 * Être capable de répondre à des questions comme :
   * combien d'adresses dispo dans un réseau donné ? 
   * première et dernière adresse d'un réseau donné ?
@@ -20,7 +18,7 @@ Lien vers [le support de cours](https://gist.github.com/It4lik/fa8eea5665284fcda
 
 Le *réseau* désigne ici toutes fonctionnalités d'un PC permettant de se connecter à d'autres machines.  
 
-De façon simplifiée, on appelle *stack TCP/IP* ou *pile TCP/IP* l'ensemble de logiciels qui permettent d'utiliser et configurer des [cartes réseau](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#carte-r%C3%A9seau-ou-interface-r%C3%A9seau) avec des adresses IP. C'est juste gros mot savant pour désigner tout ce qui touche de près ou de loin au réseau dans une machine okay ? :)
+De façon simplifiée, on appelle *stack TCP/IP* ou *pile TCP/IP* l'ensemble de logiciels qui permettent d'utiliser et configurer des [cartes réseau](./lexique.md#carte-r%C3%A9seau-ou-interface-r%C3%A9seau) avec des adresses IP. C'est juste gros mot savant pour désigner tout ce qui touche de près ou de loin au réseau dans une machine okay ? :)
 
 Lorsque l'on parle de réseau, on désigne souvent par *client* tout équipement qui porte une adresse IP. 
 
@@ -54,8 +52,8 @@ Donc vos PCs sont des *clients*, et on va explorer leur *réseau*, c'est à dire
 * Un câble RJ45 (fourni) pour connecter les deux PCs
 * Un compte-rendu par personne
   * vu que vous travaillez en groupe, aucun problème pour copier/coller les parties à faire à plusieurs (tout le [`II.`](#ii-exploration-locale-en-duo))
-  * une bonne partie est à faire de façon individuelle malgré tout (tout le [`I.`](https://gist.github.com/It4lik/08c49c6b6c1271645b8ec1e4f36747e1#i-exploration-locale-en-solo))
-  * on prendra le temps, mais le travail devra être à travers Github ou tout autre plateforme supportant le `md` (markdown)
+  * une bonne partie est à faire de façon individuelle malgré tout (tout le [`I.`](#i-exploration-locale-en-solo) et le [`III.`](#iii-manipulations-dautres-outilsprotocoles-côté-client))
+  * on prendra le temps, mais le travail devra être rendu à travers Github ou tout autre plateforme supportant le `md` (markdown)
 * Le rendu doit : 
   * comporter des réponses aux questions explicites
   * comporter la marche à suivre pour réaliser les outils utilisés :
@@ -82,14 +80,14 @@ Donc vos PCs sont des *clients*, et on va explorer leur *réseau*, c'est à dire
 En utilisant la ligne de commande (CLI) de votre OS : 
 
 **Affichez les infos des cartes réseau de votre PC**
-  * nom, [adresse MAC](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#mac--media-access-control) et adresse IP de l'interface WiFi
-  * nom, [adresse MAC](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#mac--media-access-control) et adresse IP de l'interface Ethernet
+  * nom, [adresse MAC](./lexique.md#mac--media-access-control) et adresse IP de l'interface WiFi
+  * nom, [adresse MAC](./lexique.md#mac--media-access-control) et adresse IP de l'interface Ethernet
   * déterminer, pour chacune d'entre elles :
-    * [adresse de réseau](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#adresse-de-r%C3%A9seau)
-    * [adresse de broadcast](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#adresse-de-diffusion-ou-broadcast-address)
+    * [adresse de réseau](./lexique.md#adresse-de-r%C3%A9seau)
+    * [adresse de broadcast](./lexique.md#adresse-de-diffusion-ou-broadcast-address)
  
 **Affichez votre gateway**
-  * trouvez sur internet une commande pour connaître l'adresse IP de la [passerelle](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#passerelle-ou-gateway) de votre carte WiFi
+  * trouvez sur internet une commande pour connaître l'adresse IP de la [passerelle](./lexique.md#passerelle-ou-gateway) de votre carte WiFi
   
 ### En graphique (GUI : Graphical User Interface)
 
@@ -97,18 +95,18 @@ En utilisant l'interface graphique de votre OS :
 
 **Trouvez comment afficher les informations sur une carte IP (change selon l'OS)**
   * là aussi, cherchez sur internet
-  * trouvez l'IP, la MAC et la [gateway](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#passerelle-ou-gateway) pour l'interface WiFi de votre PC
+  * trouvez l'IP, la MAC et la [gateway](./lexique.md#passerelle-ou-gateway) pour l'interface WiFi de votre PC
 
 ### Questions
 
-* à quoi sert la [gateway](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#passerelle-ou-gateway) dans le réseau d'Ingésup ?
+* à quoi sert la [gateway](./lexique.md#passerelle-ou-gateway) dans le réseau d'Ingésup ?
 
 ## 2. Modifications des informations
 
 ### A. Modification d'adresse IP - pt. 1  
 
 Utilisez l'interface graphique de vorte OS pour **changer d'adresse IP** :
-  * [calculez la première et la dernière IP **disponibles** du réseau](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#3-exemple-de-manipulation-dip-vue-en-cours) (pour rappel, l'*adresse de réseau* et l'*adresse broadcast* ne sont pas "disponibles")
+  * [calculez la première et la dernière IP **disponibles** du réseau](../../cours/1.md#3-exemple-de-manipulation-dip-vue-en-cours) (pour rappel, l'*adresse de réseau* et l'*adresse broadcast* ne sont pas "disponibles")
   * changez l'adresse IP de votre carte WiFi pour une autre (mais toujours dans le même réseau)
 
 * **NOTE :** si vous utilisez la même IP que quelqu'un d'autre, il se passerait la même chose qu'en vrai avec des adresses postales :
@@ -128,7 +126,7 @@ Les commandes `nmap` se présentent comme : `nmap OPTIONS CIBLE`
     * exemple : `nmap -sP` (`sP` c'est un Ping Scan, on y reviendra)
   * la cible est soit une adresse de réseau (on cible tous les hôtes du réseau), soit un hôte simple 
     * hôte simple : `nmap -sP 192.168.1.35`
-    * [réseau](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#adresse-de-r%C3%A9seau) : `nmap -sP 192.168.1.0/24` (notation *CIDR*)
+    * [réseau](./lexique.md#adresse-de-r%C3%A9seau) : `nmap -sP 192.168.1.0/24` (notation *CIDR*)
 
 * utilisation 
   * téléchargez `nmap` en suivant les instructions du [site officiel](https://nmap.org/book/install.html) pour votre OS
@@ -227,8 +225,8 @@ L'idée est la suivante :
     * sur Linux, faites le en ligne de commande ou utilisez [Network Manager](https://help.ubuntu.com/community/Internet/ConnectionSharing) (présent sur tous les Linux communs)
     * sur MacOS : toute façon vous avez pas de ports RJ, si ? :o
 
-* pour tester la connectivité à internet on utilise souvent un [`ping`](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#ping)
-* je veux voir un [`ping 8.8.8.8`](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#ping) qui fonctionne sur un PC sans carte WiFi. Appelez-moi quand vous avez fait ça :)
+* pour tester la connectivité à internet on utilise souvent un [`ping`](./lexique.md#ping)
+* je veux voir un [`ping 8.8.8.8`](./lexique.md#ping) qui fonctionne sur un PC sans carte WiFi. Appelez-moi quand vous avez fait ça :)
 
 ## 5. Petit chat privé ?
 
@@ -370,12 +368,12 @@ En combinant des trucs qu'on a vu plus tôt, ça se fait facilement d'aller plus
 
 **Résumé :**  
 * Pour permettre à un ordinateur d'être connecté en réseau, il lui faut **une liaison physique** (par câble ou par *WiFi*).  
-* Pour réceptionner ce lien physique, l'ordinateur a besoin d'**une carte réseau**. La carte réseau porte une [adresse MAC](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#mac--media-access-control).  
+* Pour réceptionner ce lien physique, l'ordinateur a besoin d'**une carte réseau**. La carte réseau porte une [adresse MAC](./lexique.md#mac--media-access-control).  
 * **Pour être membre d'un réseau particulier, une carte réseau peut porter une adresse IP.** 
 Si deux ordinateurs reliés physiquement possèdent une adresse IP dans le même réseau, alors ils peuvent communiquer.  
 * **Un ordintateur qui possède plusieurs cartes réseau** peut réceptionner du trafic sur l'une d'entre elles, et le balancer sur l'autre, servant ainsi de "pivot". Cet ordinateur **est appelé routeur**.   
 * Il existe dans la plupart des réseaux, certains équipements ayant un rôle particulier : 
-  * un équipement appelé **[*passerelle*](https://gist.github.com/It4lik/fa8eea5665284fcdaaac11f5cec2d399#passerelle-ou-gateway)**. C'est un routeur, et il nous permet de sortir du réseau actuel, pour en joindre un autre.  
+  * un équipement appelé **[*passerelle*](./lexique.md#passerelle-ou-gateway)**. C'est un routeur, et il nous permet de sortir du réseau actuel, pour en joindre un autre.  
   * un équipement qui agit comme **serveur DNS** : il nous permet de connaître les IP derrière des noms de domaine
   * un équipement qui agit comme **serveur DHCP** : il donne automatiquement des IP aux clients qui rejoigne le réseau
   * chez vous, c'est votre Box qui fait les trois :)
