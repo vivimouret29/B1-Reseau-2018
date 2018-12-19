@@ -1,6 +1,6 @@
 # TP1 : Subnetting
 
-Le *subnetting* c'est ce qu'on a fait pendant les premiers cours : jouer ave cdes adresses IPs, et surtout, découper des réseaux. 
+Le *subnetting* c'est ce qu'on a fait pendant les premiers cours : jouer avec des adresses IPs, et surtout, découper des réseaux. 
 
 Rappel d'exos vus : 
 * déterminer l'adresse de réseau à partir d'une adresse IP et du masque associé
@@ -12,4 +12,4 @@ Rappel d'exos vus :
   * j'ai un réseau en `/24` à ma disposition
   * comment couper le `/24` pour que chaque type d'équipements se retrouve dans un réseau le plus petit possible ?
 
-Pour réaliser tout ça, la marché à suivre est dans le [premier cours](../../cours/1.md).
+Pour réaliser tout ça, la marche à suivre est dans le support de cours pour les premiers cours, dans le [TP1](../../cours/1.md#tp-1---découverte-et-manipulations-ip) et le [TP1.5](../../cours/1.md#tp15--subnetting-et-réseau-client).
