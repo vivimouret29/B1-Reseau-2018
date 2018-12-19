@@ -1,4 +1,9 @@
 # Lexique
+
+* [Sigles et Acronymes](#siglesacronymes)
+* [Notions](#notions)
+* [Commandes](#commandes)
+
 ## Sigles/Acronymes
 
 ### *CIDR* : Classless Inter-Domain Routing
@@ -67,6 +72,16 @@
   * "j'ai un `/24`"
   * "j'ai un réseau avec 256 adresses possibles"
 
+### Subnetting
+* c'est le fait de découper un réseau en plusieurs sous-réseaux
+* par exemple, un `/24` contient deux `/25`
+  * `192.168.1.0/24` est la réunion de `192.168.1.0/25` et `192.168.1.128/25`
+* il existe des tonnes d'outils permettant d'assister le subnetting en évitant de devenir fou avec le binaire, comme [celui-ci](http://www.davidc.net/sites/default/subnets/subnets.html)
+
+## Commandes
+
+### `ipconfig` ou `ifconfig` ou `ip a`
+
 ### `ping`
 * message très simple qui fait un aller-retour sur le réseau
 * on l'utilise souvent pour tester la présence de quelqu'un sur le réseau
@@ -77,8 +92,10 @@
   * `8.8.8.8` est une adresse simple  mémoriser et correspond en réalité à un serveur de Google
   * `1.1.1.1` peut aussi être utilisé de la même façon, c'est un serveur de CloudFlare
   
-### Subnetting
-* c'est le fait de découper un réseau en plusieurs sous-réseaux
-* par exemple, un `/24` contient deux `/25`
-  * `192.168.1.0/24` est la réunion de `192.168.1.0/25` et `192.168.1.128/25`
-* il existe des tonnes d'outils permettant d'assister le subnetting en évitant de devenir fou avec le binaire, comme [celui-ci](http://www.davidc.net/sites/default/subnets/subnets.html)
+### `nmap`
+
+### `nc` ou `netcat`
+
+### `netstat` ou `ss`
+
+### `nslookup` ou `dig`
