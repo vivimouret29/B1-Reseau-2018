@@ -11,3 +11,5 @@ Rappel d'exos vus :
   * j'ai 12 serveurs, 4 imprimantes, 56 postes clients (des PCs)
   * j'ai un réseau en `/24` à ma disposition
   * comment couper le `/24` pour que chaque type d'équipements se retrouve dans un réseau le plus petit possible ?
+
+Pour réaliser tout ça, la marché à suivre est dans le [premier cours](../../cours/1.md).
