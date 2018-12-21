@@ -3,3 +3,18 @@
 Ce dossier contient les TPs : 
 * [TP1](./1) : bref récapitulatif des TPs des premières séances
 * [TP2](./2) : manipulations autour du réseau sur les postes clients
+
+# Rendu de TP
+
+Les rendus de TPs : 
+* doivent être au format [Mardown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* doivent être rendus à travers une plateforme utilisant `git`, comme Github
+* l'organisation de vos dépôts `git` est libre à vous, excepté :
+  * un `README.md` à la racine
+    * il peut expliquer le contenu du dépôt, ou proposer des liens vers les rendus de TP
+    * il peut aussi simplement contenir le rendu
+  * un fichier `members` à la racine
+    * **il contient un seul mot par ligne** : le nom d'un des membres de votre groupe pour les TPs à plusieurs
+* pour me faire parvenir le rendu, vous m'envoyez un MP sur Discord, le message doit être formatté comme suit : 
+  * `nom:url`
+  * par exemple `dupont:https://github.com/dupont/b1-net-tp2` 
