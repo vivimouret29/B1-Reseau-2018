@@ -65,6 +65,7 @@
   * héxadécimal (base 16)
   * base 64 (oui oui, base 64)
   * pour les curieux : en fait l'ASCII normal (pas la table étendue), c'est juste une base 128 hein :)
+* le cours 1 contient [un passage avec des calculs binaires](./1.md#3-exemple-de-manipulation-dip-vue-en-cours)
  
 ### Carte réseau (ou interface réseau)
 * carte physique dans une machine (ou virtuelle, on verra ça plus tard)
