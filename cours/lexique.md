@@ -113,6 +113,16 @@
 ## Commandes
 
 ### `ipconfig` ou `ifconfig` ou `ip a`
+* affiche des informations sur les carte réseau
+```
+# Windows
+ipconfig 
+ipconfig /all
+
+# GNU/Linux ou MacOS
+ifconfig
+ip a
+```
 
 ### `ping`
 * message très simple qui fait un aller-retour sur le réseau
@@ -125,9 +135,25 @@
   * `1.1.1.1` peut aussi être utilisé de la même façon, c'est un serveur de CloudFlare
   
 ### `nmap`
+* outil de scan réseau
+* permet de récupérer des informations sur un réseau et les machines qui y sont connectées
+* beaucoup de scans sont possibles
+  * le plus simple, le scan de ping envoie simplement un `ping` à toutes les IPs d'un réseau
+  * exemple de scan de ping : `nmap -sP 192.168.1.0/24`
 
 ### `nc` ou `netcat`
+* outil permettant de simples connexions [TCP](#TCP) ou [UDP](#UDP)
+* on a effectué des simples connexions entre vos PCs en cours
+* mais on peut aussi s'en servir pour se connecter à un serveur web, aucun problème
+  * faut savoir parler l'HTTP par contre ehe
 
 ### `netstat` ou `ss`
+* outils permettant de lister les connexions actives d'une machine
+  * entre autres, une par site web que l'on visite par exemple
 
 ### `nslookup` ou `dig`
+* outils permettant d'effectuer des opérations liées au protocole DNS
+* un "lookup DNS" consiste à demander quelle est l'IP d'un nom donné
+  * "à quelle IP se trouve le serveur www.google.com ?" par exemple
+* un "reverse lookup DNS" c'est l'inverse : on cherche à connaître à quel nom est associée une IP
+  * "y'a-t-il des noms associés à 76.32.43.32 ?" par exemple
