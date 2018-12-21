@@ -55,13 +55,6 @@
 * exemple :
   * pour l'adresse IP `192.168.1.37/24`, l'adresse de broadcast est `192.168.1.255/24`
 
-### Passerelle ou *Gateway*
-* la *passerelle* est un noeud agissant comme pivot, et elle permet de sortir du réseau (de chez vous vers Internet par exemple)
-* il existe des réseaux sans passerelle
-* la passerelle possède souvent l'IP juste avant la *broadcast*, mais pas toujours (ce n'est pas le cas à Ingésup par exemple)
-* **la passerelle est une machine. L'adresse IP de gateway est donc l'adresse IP d'une machine présente sur le même réseau que nous,  contrairement à l'adresse de broadcast** c'est une adresse IP réelle, et elle est portée par un équipement.
-* **un réseau qui ne souhaite pas être connecté à d'autres réseaux ne possède pas de passerelle**
-
 ### Binaire
 * c'est la base 2 des mathématiques
 * nous sommes habitués à compter en base 10
@@ -87,7 +80,15 @@
   * "j'ai un `/24`"
   * "j'ai un réseau avec 256 adresses possibles"
 
+### Passerelle ou *Gateway*
+* la *passerelle* est un noeud agissant comme pivot, et elle permet de sortir du réseau (de chez vous vers Internet par exemple)
+* il existe des réseaux sans passerelle
+* la passerelle possède souvent l'IP juste avant la *broadcast*, mais pas toujours (ce n'est pas le cas à Ingésup par exemple)
+* **la passerelle est une machine. L'adresse IP de gateway est donc l'adresse IP d'une machine présente sur le même réseau que nous,  contrairement à l'adresse de broadcast** c'est une adresse IP réelle, et elle est portée par un équipement.
+* **un réseau qui ne souhaite pas être connecté à d'autres réseaux ne possède pas de passerelle**
+
 ### Ports
+* [le cours est plus complete à ce sujet](./2.md#notion-de-ports)
 * un port est un point d'entrée unique **sur une interface réseau**
   * donc si on a deux interfaces réseau, on a deux ports 443 (entre autres) : un sur chaque interface
 * on peut demander à des applications "d'écouter" sur un ou plusieurs ports
