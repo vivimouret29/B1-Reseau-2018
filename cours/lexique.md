@@ -87,6 +87,12 @@
   * "j'ai un `/24`"
   * "j'ai un réseau avec 256 adresses possibles"
 
+### Ports
+* un port est un point d'entrée unique **sur une interface réseau**
+  * donc si on a deux interfaces réseau, on a deux ports 443 (entre autres) : un sur chaque interface
+* on peut demander à des applications "d'écouter" sur un ou plusieurs ports
+* par exemple, pour un site web, on demande souvent au serveur Web d'écouter sur le port 443 pour HTTPS
+
 ### Subnetting
 * c'est le fait de découper un réseau en plusieurs sous-réseaux
 * par exemple, un `/24` contient deux `/25`
