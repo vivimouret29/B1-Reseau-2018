@@ -73,6 +73,15 @@
 * peut porter une adresse IP et ainsi "être dans un réseau"
 * dans nos PCs du quotidien, on en a au moins une : la carte WiFi
 
+### Loopback
+* quand on parle de Loopback on parle d'une interface réseau
+* il existe au moins une Loopback sur tous les équipements
+  * sur vos PCs elle porte l'IP `127.0.0.1`
+  * parfois elle est gérée différemment par rapport aux autres interfaces (vous ne la voyez pas sur Windows avec un `ipconfig`)
+* **une interface de loopback permet uniquement de se joindre soi-même**
+  * en fait c'est juste qu'elle porte une IP dans un `/32`, un masque un peu particulier, utilisé à cet effet :)
+* go test un `ping 127.0.0.1` vous aurez jamais vu un `ping` si rapide. Normal : vous pingez votre propre machine, sans passer par le réseau
+
 ### Masque de sous-réseau
 * permet d'extraire l'[adresse de réseau](#adresse-de-réseau) d'une adresse IP
 * se présente sous sa forme classique `255.255.255.0` ou en notation [CIDR](#cidr--classless-inter-domain-routing) `/24`
