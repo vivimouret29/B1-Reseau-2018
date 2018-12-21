@@ -7,7 +7,7 @@ Ce dossier contient les TPs :
 # Rendu de TP
 
 Les rendus de TPs : 
-* doivent être au format [Mardown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* doivent être au format [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 * doivent être rendus à travers une plateforme utilisant `git`, comme Github
 * l'organisation de vos dépôts `git` est libre à vous, excepté :
   * un `README.md` à la racine
