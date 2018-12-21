@@ -15,6 +15,11 @@ Les rendus de TPs :
     * il peut aussi simplement contenir le rendu
   * un fichier `members` à la racine
     * **il contient un seul mot par ligne** : le nom d'un des membres de votre groupe pour les TPs à plusieurs
+    * par exemple :
+```
+dupont
+macron
+```
 * pour me faire parvenir le rendu, vous m'envoyez un MP sur Discord, le message doit être formatté comme suit : 
   * `nom:url`
   * par exemple `dupont:https://github.com/dupont/b1-net-tp2` 
