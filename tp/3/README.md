@@ -358,8 +358,10 @@ Faire comme sur VM1
 * configuration des cartes réseau de la VM
 * configuration d'IP statique sous vos OS natifs et CentOS7
 * gestion de réseau élémentaire sous Linux 
-  * `ping`, `netcat`, `ip a`
+  * `ping`, `netcat`, `ip a`, `ss`
 * création d'un routage statique simple avec des VMs Linux comme clients et les PCs hôtes comme routeurs
+  * tout le monde doit connaître toutes les routes
+  * `PC1`, `PC2`, `VM1` et `VM2` ont tous une route vers les réseaux `1`, `2` et `12` dans leur table de routage
 
 ---
 
