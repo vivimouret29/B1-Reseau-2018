@@ -14,6 +14,7 @@
 
 * Ligne de commande (bref, navigation de dossier)
 
+---
 # TP 2 - Exploration du *réseau* d'un point de vue *client*
 
 Le *réseau* désigne ici toutes fonctionnalités d'un PC permettant de se connecter à d'autres machines.  
