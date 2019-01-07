@@ -58,7 +58,7 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
 Dans cette partie, on va créer, installer et configurer une amchine virtuelle. L'étape de configuration se centrera évidemment sur l'aspect réseau de la machine.
 
 ## 1. Création
-Créez une machine virtuelle en utilisant un `iso` de CentOS 7 (version minimale).  
+Créez une machine virtuelle en utilisant un [`iso` de CentOS 7 (version minimale)](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso).  
 Avant la création, la seule chose qu'on va toucher, c'est le réseau. Assurez-vous que : 
 * votre VM possède une interface de type NAT
 * votre VM possède une interface de type *réseau privé hôte* ou *host-only network*
@@ -110,15 +110,14 @@ Cherchez sur internet afin que votre VM :
 ## 5. Faire joujou avec quelques commandes
 
 Rien à faire pour le moment, juste quelques commandes utiles liées au réseau avec lesquelles vous pouvez faire joujou, afin de vous familiariser avec la ligne de commande : 
-* `ip`
-* `ping`
-* `curl` : permet de faire des requêtes HTTP (comme un navigateur)
+* [`ping`](../../cours/lexique.md#ping)
+* [`curl`](../../cours/lexique.md#curl-et-wget) : permet de faire des requêtes HTTP (comme un navigateur)
   * `curl -SL www.google.com` par exemple
-* `dig` : requêtes DNS
+* [`dig`](../../cours/lexique.md#nslookup-ou-dig) : requêtes DNS
 * `tcpdump` : Wireshark. Mais en ligne de commande. :)
-* `nmap`
-* `nc` : c'est `netcat`
-* `ss` : permet de lister les ports utilisés sur la machine
+* [`nmap`](../../cours/lexique.md#nmap)
+* [`nc`](../../cours/lexique.md#nc-ou-netcat) : c'est `netcat`
+* [`ss`](../../cours/lexique.md#netstat-ou-ss) : permet de lister les ports utilisés sur la machine
 
 **A faire :** 
 * `ping`
@@ -138,8 +137,8 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
 [La notion de port a déjà été expliquée en cours ici.](../../cours/lexique.md#ports)
 
 ## 1. Exploration des ports locaux
-* **utilisez la commande `ss` pour lister les ports TCP sur lesquels la machine virtuelle écoute**
-  * pour ce faire, il faudra ajouter des options à la commande `ss`
+* **utilisez la commande [`ss`](../../cours/lexique.md#netstat-ou-ss) pour lister les ports TCP sur lesquels la machine virtuelle écoute**
+  * pour ce faire, il faudra ajouter des options à la commande [`ss`](../../cours/lexique.md#netstat-ou-ss)
   * par exemple, pour avoir uniquement les connexions en IPv4, on peut utiliser `ss -4`
   * il vous faut une option pour (utilisez le `man`) : 
     * TCP
@@ -148,7 +147,7 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
   * `-n` pour avoir le numéro du port, plutôt qu'un nom
   * `-p` pour connaître l'application qui écoute sur ce port
 * vous devriez voir une application qui écoute sur le port 22
-* utilisez `netcat` pour écouter sur un port 
+* utilisez [`netcat`](../../cours/lexique.md#nc-ou-netcat) pour écouter sur un port 
   * `nc -l` pour écouter (il faudra préciser l'IP et le port, cf `nc --help` ou `man nc`)
 
 ## 2. SSH
