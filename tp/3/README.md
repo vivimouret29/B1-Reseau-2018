@@ -67,7 +67,8 @@ Que de la ligne de commande, alors petit rappel :
 * `cd` change de dossier
 * `ls` liste les fichiers/dossiers du dossier actuel
 * `pwd` affiche le répertoire où on est actuellement
-Avec ces 3 là vous pouvez vous baladez un peu partout. Sachez juste que la *racine* du disque dur n'est pas à `C:` mais simplement à `/`. Donc `cd /` vous amène dans un dossier qui contient tous les autres.  
+Avec ces 3 là vous pouvez vous baladez un peu partout. Sachez juste que la *racine* du disque dur n'est pas à `C:` mais simplement à `/`. Donc `cd /` vous amène dans un dossier qui contient tous les autres.   
+
 En plus on va avoir besoin de : 
 * `man` : affiche le manuel d'une commande. Avec celle-ci vous pouvez conquérir toutes les autres :)
 * `ifconfig` (obsolète) ou `ip a` (à jour) pour avoir des infos sur vos cartes réseau
