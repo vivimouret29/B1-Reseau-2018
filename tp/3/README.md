@@ -52,6 +52,7 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
   * [Rappels et Objectifs](#0-rappels-et-objectifs)
   * [Préparation des hôtes](#1-préparation-des-hôtes-vos-pcs)
   * [Configuration du routage](#2-configuration-du-routage)
+* **[Bilan](#bilan)**
   
 ---
 # I. Création et utilisation simples d'une VM CentOS
