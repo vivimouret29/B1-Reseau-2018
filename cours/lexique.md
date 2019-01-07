@@ -166,3 +166,12 @@ ip a
   * "à quelle IP se trouve le serveur www.google.com ?" par exemple
 * un "reverse lookup DNS" c'est l'inverse : on cherche à connaître à quel nom est associée une IP
   * "y'a-t-il des noms associés à 76.32.43.32 ?" par exemple
+
+### `curl` et `wget`
+* permettent de faire des requêtes HTTP
+* tout ce que fait `wget`, `curl` sait le faire. La réciproque n'est pas vraie.
+* `wget` c'est l'outil simple mais peu puissant et très peu flexible
+* `curl`, c'est l'inverse
+* souvent, pour imiter un simple `wget`, vous pouvez faire `curl -SLO`
+* exemple : 
+  * `curl -L www.google.com` permet de récupérer le contenu du serveur web de  `www.google.com`
