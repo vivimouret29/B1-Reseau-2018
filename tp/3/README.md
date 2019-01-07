@@ -378,5 +378,5 @@ SELinux (*Security Enhanced Linux*) est un outil présent sur les distributions 
 Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir autoriser explicitement le traffic à circuler entre l'interface host-only et votre carte ethernet : 
 * `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
 * `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
-* `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`
+* `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`  
 Appelez-moi si vous galérez.
