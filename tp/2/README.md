@@ -19,7 +19,7 @@
 
 Le *réseau* désigne ici toutes fonctionnalités d'un PC permettant de se connecter à d'autres machines.  
 
-De façon simplifiée, on appelle *stack TCP/IP* ou *pile TCP/IP* l'ensemble de logiciels qui permettent d'utiliser et configurer des [cartes réseau](../../cours/lexique.md#carte-r%C3%A9seau-ou-interface-r%C3%A9seau) avec des adresses IP. C'est juste gros mot savant pour désigner tout ce qui touche de près ou de loin au réseau dans une machine okay ? :)
+De façon simplifiée, on appelle *stack TCP/IP* ou *pile TCP/IP* l'ensemble de logiciels qui permettent d'utiliser et configurer des [cartes réseau](../../cours/lexique.md#carte-r%C3%A9seau-ou-interface-r%C3%A9seau) avec des adresses IP. C'est juste un gros mot savant pour désigner tout ce qui touche de près ou de loin au réseau dans une machine okay ? :)
 
 Lorsque l'on parle de réseau, on désigne souvent par *client* tout équipement qui porte une adresse IP. 
 
