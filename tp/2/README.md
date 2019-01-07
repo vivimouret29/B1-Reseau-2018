@@ -333,7 +333,7 @@ Si votre navigateur fonctionne "normalement" : il vous permet d'aller sur `googl
 
 * trouver l'adresse IP du serveur DNS que connaît votre ordinateur
 * utiliser, en ligne de commande l'outil `nslookup` pour lui poser des questions (sur Windows). Sur GNU/Linux et MacOS vous devriez avoir `dig`
-  * faites un *lookup* (*lookup* = "dis moi à quelle IP se trouve tel nom de domaine)
+  * faites un *lookup* (*lookup* = "dis moi à quelle IP se trouve tel nom de domaine")
     * pour `google.com`
     * pour `ynov.com`
     * interpréter les résultats de ces commandes
