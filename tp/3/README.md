@@ -379,4 +379,5 @@ Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir aut
 * `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
 * `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
 * `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`  
+
 Appelez-moi si vous galérez.
