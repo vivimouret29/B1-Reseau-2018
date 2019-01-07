@@ -32,7 +32,7 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
 * le rendu doit toujours se faire [au même format](../README.md)
 
 # Hints généraux
-=* **pour vos recherches Google** (ou autres) : 
+* **pour vos recherches Google** (ou autres) : 
   * **en anglais**
   * **précisez l'OS et la version** dans vos recherches ("centos 7" ici)
 * dans le TP, **lisez en entier une partie avant de commencer à la réaliser.** Ca donne du sens et aide à la compréhension
