@@ -98,7 +98,9 @@
 * **un réseau qui ne souhaite pas être connecté à d'autres réseaux ne possède pas de passerelle**
 
 ### Ports
-* [le cours est plus complete à ce sujet](./2.md#notion-de-ports)
+* [le cours est plus complet à ce sujet](./2.md#notion-de-ports)
+* un serveur est une machine qui "écoute" sur un port
+  * un client est une machine qui se connecte à un port où un serveur écoute
 * un port est un point d'entrée unique **sur une interface réseau**
   * donc si on a deux interfaces réseau, on a deux ports 443 (entre autres) : un sur chaque interface
 * on peut demander à des applications "d'écouter" sur un ou plusieurs ports
