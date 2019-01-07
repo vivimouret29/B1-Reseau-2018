@@ -11,7 +11,7 @@
   * `nmap` (un peu)
   * `netcat` ou `nc` suivant l'OS
 
-# TP 3 - Plusieurs machines en réseau
+# TP 3 - Plusieurs réseaux : routage statique
 Pour ce TP (et probablement pour beaucoup de TPs à l'avenir), on va se servir de machines virtuelles.  
 Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les faire communiquer.  
 
