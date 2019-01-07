@@ -41,7 +41,14 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
 
 # Sommaire
 
-* [# I. Création et utilisation simples d'un VM CentOS](#i-création-et-utilisation-simples-dune-vm-centos)
+* [I. Création et utilisation simples d'un VM CentOS](#i-création-et-utilisation-simples-dune-vm-centos)
+  * [Premiers Pas](#1-création)
+  * [Configuration réseau](#4-configuration-réseau-dune-machine-centos)
+  * [Quelques commandes liées au réseau](#5-faire-joujou-avec-quelques-commandes)
+* [II. Notion de ports et SSH](#ii-notion-de-ports-et-ssh)
+  * [Exploration des ports locaux](#1-exploration-des-ports-locaux)
+  * [Serveur SSH](#2-ssh)
+  * [Firewall](#3-firewall)
 ---
 # I. Création et utilisation simples d'une VM CentOS
 Dans cette partie, on va créer, installer et configurer une amchine virtuelle. L'étape de configuration se centrera évidemment sur l'aspect réseau de la machine.
@@ -122,7 +129,7 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
 
 # II. Notion de ports et SSH
 
-[La notion de port a déjà été expliquée en cours](../../cours/lexique.md#ports)
+[La notion de port a déjà été expliquée en cours ici.](../../cours/lexique.md#ports)
 
 ## 1. Exploration des ports locaux
 * **utilisez la commande `ss` pour lister les ports TCP sur lesquels la machine virtuelle écoute**
@@ -135,6 +142,8 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
   * `-n` pour avoir le numéro du port, plutôt qu'un nom
   * `-p` pour connaître l'application qui écoute sur ce port
 * vous devriez voir une application qui écoute sur le port 22
+* utilisez `netcat` pour écouter sur un port 
+  * `nc -l` pour écouter (il faudra préciser l'IP et le port, cf `nc --help` ou `man nc`)
 
 ## 2. SSH
 SSH est un protocole pour se connecter sur un serveur à distance :
@@ -337,9 +346,25 @@ Faire comme sur VM1
 # Bilan
 * création de machine virtuelle simple
 * configuration des cartes réseau de la VM
-* configuration d'IP statique sous l'OS natif et CentOS7
+* configuration d'IP statique sous vos OS natifs et CentOS7
 * gestion de réseau élémentaire sous Linux 
   * `ping`, `netcat`, `ip a`
 * création d'un routage statique simple avec des VMs Linux comme clients et les PCs hôtes comme routeurs
 
 ---
+
+# Annexe 1 : Désactiver SELinux
+SELinux (*Security Enhanced Linux*) est un outil présent sur les distributions GNU/Linux dérivés de RHEL (comme CentOS).  
+**Pour nos TPs, la seule chose à savoir, c'est qu'on va le désactiver :**
+* `sudo setenforce 0`
+* modifier le fichier `/etc/selinux/config`
+  * modifier la valeur de `SELINUX` à `permissive`
+  * `SELINUX=permissive`
+* pour vérifier : `sestatus` doit afficher `Current mode:   permissive`
+
+# Annexe 2 : Routing si vos PCs sont sous Linux
+Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir autoriser explicitement le traffic à circuler entre l'interface host-only et votre carte ethernet : 
+* `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
+* `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
+* `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`
+Appelez-moi si vous galérez.
