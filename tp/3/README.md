@@ -84,6 +84,8 @@ En plus on va avoir besoin de :
 * `nano` (simple, mais nul) ou `vi`/`vim` (complexe, mais puissant) pour éditer des fichiers
 * rien de particulier à faire ici, juste se familiariser un peu avec les commandes peut être intéressant avant de passer à la suite ;)
 
+**Avant tout le reste, [désactivez SELinux](#annexe-1--désactiver-selinux).**  
+
 ## 4. Configuration réseau d'une machine CentOS
 Ca se présentera à peu près pareil pour beaucoup d'OS Linux, les fichiers sont simplement différents parfois.   
 Cherchez sur internet afin que votre VM :
@@ -146,6 +148,9 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
   * `nc -l` pour écouter (il faudra préciser l'IP et le port, cf `nc --help` ou `man nc`)
 
 ## 2. SSH
+
+**Pour rappel, il faut [désactiver SELinux](#annexe-1--désactiver-selinux).**  
+
 SSH est un protocole pour se connecter sur un serveur à distance :
 * on installe un serveur SSH sur un serveur
 * on configure le serveur SSH pour écouteur sur une adresse IP et un port spécifiques
@@ -353,7 +358,7 @@ Faire comme sur VM1
 
 ---
 
-# Annexe 1 : Désactiver SELinux
+### Annexe 1 : Désactiver SELinux
 SELinux (*Security Enhanced Linux*) est un outil présent sur les distributions GNU/Linux dérivés de RHEL (comme CentOS).  
 **Pour nos TPs, la seule chose à savoir, c'est qu'on va le désactiver :**
 * `sudo setenforce 0`
@@ -362,7 +367,7 @@ SELinux (*Security Enhanced Linux*) est un outil présent sur les distributions 
   * `SELINUX=permissive`
 * pour vérifier : `sestatus` doit afficher `Current mode:   permissive`
 
-# Annexe 2 : Routing si vos PCs sont sous Linux
+### Annexe 2 : Routing si vos PCs sont sous Linux
 Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir autoriser explicitement le traffic à circuler entre l'interface host-only et votre carte ethernet : 
 * `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
 * `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
