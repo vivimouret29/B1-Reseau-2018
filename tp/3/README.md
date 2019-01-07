@@ -41,7 +41,7 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
 
 # Sommaire
 
-* [# I. Création et utilisation simples d'un VM CentOS](#i-création-et-utilisation-simples-de-machines-virtuelles)
+* [# I. Création et utilisation simples d'un VM CentOS](#i-création-et-utilisation-simples-dune-vm-centos)
 ---
 # I. Création et utilisation simples d'une VM CentOS
 Dans cette partie, on va créer, installer et configurer une amchine virtuelle. L'étape de configuration se centrera évidemment sur l'aspect réseau de la machine.
