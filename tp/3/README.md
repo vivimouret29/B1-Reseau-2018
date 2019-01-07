@@ -85,15 +85,18 @@ Cherchez sur internet afin que votre VM :
   * aucune configuration nécessaire normalement
 * possède une IP privée permettant de joindre l'hôte
   * c'est l'interface *host-only* qui s'en occupe
+  * vous devrez modifier **un seul** fichier dans `/etc/sysconfig/network-scripts` pour ce faire
+  * vous pouvez ensuite faire `ifdown` puis `ifup` sur l'interface pour l'éteinder puis la rallumer
+  * un petit `ip a` pour vérifier que le changement a pris effet
 
 * une fois fait :
   * utilisez une commande pour prouver que vous avez internet depuis la VM
   * prouvez que votre PC hôte et la VM peuvent communiquer
-  * affichez votre table de routage et expliquez chacune des lignes
+  * affichez votre table de routage sur la VM et expliquez chacune des lignes
 
 ## 5. Faire joujou avec quelques commandes
 
-Quelques commandes liées au réseau avec lesquelles vous pouvez faire joujou, afin de vous familiariser avec la ligne de commande : 
+Rien à faire pour le moment, juste quelques commandes utiles liées au réseau avec lesquelles vous pouvez faire joujou, afin de vous familiariser avec la ligne de commande : 
 * `ip`
 * `ping`
 * `curl` : permet de faire des requêtes HTTP (comme un navigateur)
@@ -104,16 +107,16 @@ Quelques commandes liées au réseau avec lesquelles vous pouvez faire joujou, a
 * `nc` : c'est `netcat`
 * `ss` : permet de lister les ports utilisés sur la machine
 
-A faire : 
+**A faire :** 
 * `ping`
   * `ping` hôte -> VM
   * `ping` VM -> hôte
 * afficher la table de routage
   * de l'hôte
   * de la VM
-  * mettre en évidence la ligne qui leur permet de discuter
-* utilisez `curl` (ou `wget`) pour télécharger un fichier sur internet
-* utilisez `dig` pour connaître l'IP de :
+  * mettre en évidence la ligne qui leur permet de discuter (dans chacune des tables)
+* depuis la VM utilisez `curl` (ou `wget`) pour télécharger un fichier sur internet
+* depuis la VM utilisez `dig` pour connaître l'IP de :
   * `ynov.com`
   * `google.com`
 
