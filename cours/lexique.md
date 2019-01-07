@@ -152,6 +152,13 @@ ip a
 ### `netstat` ou `ss`
 * outils permettant de lister les connexions actives d'une machine
   * entre autres, une par site web que l'on visite par exemple
+* options communes de `ss`
+  * `-l` pour les ports en écoute (`-l` comme *listen*)
+  * `-t` pour les ports TCP
+  * `-u` pour les ports UDP
+  * `-4` pour les connexions IPv4
+  * `-n` pour ne pas transformer le numéro de ports en nom de service
+  * `-p` pour voir l'application (le processus) qui est attaché à un port
 
 ### `nslookup` ou `dig`
 * outils permettant d'effectuer des opérations liées au protocole DNS
