@@ -11,7 +11,6 @@
   * `nmap` (un peu)
   * `netcat` ou `nc` suivant l'OS
 
----
 # TP 3 - Plusieurs machines en réseau
 Pour ce TP (et probablement pour beaucoup de TPs à l'avenir), on va se servir de machines virtuelles.  
 Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les faire communiquer.  
@@ -49,6 +48,11 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
   * [Exploration des ports locaux](#1-exploration-des-ports-locaux)
   * [Serveur SSH](#2-ssh)
   * [Firewall](#3-firewall)
+* [III. Routage statique](#iii-routage-statique)
+  * [Rappels et Objectifs](#0-rappels-et-objectifs)
+  * [Préparation des hôtes](#1-préparation-des-hôtes-vos-pcs)
+  * [Configuration du routage](#2-configuration-du-routage)
+  
 ---
 # I. Création et utilisation simples d'une VM CentOS
 Dans cette partie, on va créer, installer et configurer une amchine virtuelle. L'étape de configuration se centrera évidemment sur l'aspect réseau de la machine.
@@ -328,7 +332,8 @@ Faire l'opération inverse.
 * PC2 devrait pouvoir ping `192.168.101.1` (ladresse de PC1 dans `1`)
 
 ---
-**Appelez-moi pour que je vérifie tout ça !**
+**Appelez-moi pour que je vérifie tout ça !**  
+
 ---
 
 ### VM1
