@@ -18,17 +18,16 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
 
 # Déroulement et rendu du TP 
 * vous utiliserez un l'hyperviseur de votre choix parmi : 
-  * Virtualbox
+  * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
   * VMWare Workstation
   * j'utiliserai VirtualBox pour ma part, c'est avec lui que les exemples seront donnés
 * les machines virtuelles : 
-  * l'OS **devra être** CentOS 7 (en version minimale)
+  * l'OS **devra être** [CentOS 7 (en version minimale)](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso)
   * pas d'interface graphique (que de la ligne de commande)
   
 * il y a beaucoup de ligne de commande dans ce TP, préférez les copier/coller aux screens
-  * comment ça on peut pas copier/coller depuis la console d'une VM ? 
-  * vous pourrez copiez/coller à partir du [II.2.](#2-ssh)
-  * soit vous screenez ce qu'il y a avant, soit vous prenez des notes et vous refaites une fois que vous pouvez copier/coller (hc'est très vite fait à refaire)
+  * vous pourrez copiez/coller simplement à partir du [II.2.](#2-ssh)
+  * soit vous screenez ce qu'il y a avant, soit vous prenez des notes et vous refaites une fois que vous pouvez copier/coller (c'est très vite fait à refaire)
 * le rendu doit toujours se faire [au même format](../README.md)
 
 # Hints généraux
@@ -42,8 +41,9 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
 
 # Sommaire
 
+* [# I. Création et utilisation simples d'un VM CentOS](#i-création-et-utilisation-simples-de-machines-virtuelles)
 ---
-# I. Création et utilisation simples de machines virtuelles
+# I. Création et utilisation simples d'une VM CentOS
 Dans cette partie, on va créer, installer et configurer une amchine virtuelle. L'étape de configuration se centrera évidemment sur l'aspect réseau de la machine.
 
 ## 1. Création
