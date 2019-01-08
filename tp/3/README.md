@@ -157,8 +157,6 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
   * `-n` pour avoir le numéro du port, plutôt qu'un nom
   * `-p` pour connaître l'application qui écoute sur ce port
 * vous devriez voir une application qui écoute sur le port 22
-* utilisez [`netcat`](../../cours/lexique.md#nc-ou-netcat) pour écouter sur un port 
-  * `nc -l` pour écouter (il faudra préciser l'IP et le port, cf `nc --help` ou `man nc`)
 
 ## 2. SSH
 
@@ -195,7 +193,7 @@ Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
 * `firewall-cmd --remove-port=80/tcp --permanent` pour supprimer une règle qui autorisait les connexions sur le port TCP 80 
 * `firewall-cmd --reload` permet aux modifications effectuées de prendre effet
 
-* à faire : 
+* A. à faire : 
   * modifier le fichier `/etc/ssh/sshd_config`
     * changer le numéro du port sur lequel votre serveur SSH écoute
     * **utilisez un port strictement supérieur à 1024** (2222 par exemple)
@@ -208,6 +206,16 @@ Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
   * sans autre modification, la connexion devrait échouer
     * expliquez pourquoi
     * trouvez une solution
+    
+* B. à faire: 
+  * dans un premier terminal 
+    * lancer un serveur `netcat` dans un terminal (commande `nc -l`)
+    * le serveur doit écouter sur le port 5454 en TCP
+    * il faudra autoriser ce port dans le firewall
+  * dans un deuxième terminal
+    * se connecter au serveur `netcat` (commande `nc`)
+  * dans un troisième terminal
+    * utiliser `ss` pour visualiser la connexion `netcat` en cours
 
 # III. Routage statique
 Le routage, c'est le fait d'utiliser une machine comme pivot (le routeur), entre deux réseau, afin qu'il fasse passer le trafic d'un réseau à un autre.  
