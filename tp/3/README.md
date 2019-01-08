@@ -56,9 +56,12 @@ Le but sera de simuler un petit réseau dans chacun de vos machines, afin de les
   
 ---
 # I. Création et utilisation simples d'une VM CentOS
+
 Dans cette partie, on va créer, installer et configurer une amchine virtuelle. L'étape de configuration se centrera évidemment sur l'aspect réseau de la machine.
 
 ## 1. Création
+**(déjà fait ensemble en cours)**  
+
 Créez une machine virtuelle en utilisant un [`iso` de CentOS 7 (version minimale)](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso).  
 Avant la création, la seule chose qu'on va toucher, c'est le réseau. Assurez-vous que : 
 * votre VM possède une interface de type NAT
@@ -66,6 +69,8 @@ Avant la création, la seule chose qu'on va toucher, c'est le réseau. Assurez-v
   * ce réseau *host-only* **ne doit pas** avoir de serveur DHCP activé
 
 ## 2. Installation de l'OS
+**(déjà fait ensemble en cours)**  
+
 CentOS 7 est fourni avec un installateur graphique (on peut cliquer et faire des bails et tout), afin de faciliter l'installation de l'OS.  
 On laisse la plupart des éléments par défaut excepté : 
 * activation de la carte réseau NAT
@@ -75,6 +80,8 @@ On laisse la plupart des éléments par défaut excepté :
 * disposition du clavier en *fr*
 
 ## 3. Premier boot
+**(déjà fait ensemble en cours)**  
+
 Que de la ligne de commande, alors petit rappel :
 * `cd` change de dossier
 * `ls` liste les fichiers/dossiers du dossier actuel
@@ -92,6 +99,8 @@ En plus on va avoir besoin de :
 **Avant tout le reste, [désactivez SELinux](#annexe-1--désactiver-selinux).**  
 
 ## 4. Configuration réseau d'une machine CentOS
+**(déjà fait ensemble en cours)**  
+
 Ca se présentera à peu près pareil pour beaucoup d'OS Linux, les fichiers sont simplement différents parfois.   
 Cherchez sur internet afin que votre VM :
 * possède une connectivité à Internet
@@ -103,7 +112,7 @@ Cherchez sur internet afin que votre VM :
   * vous pouvez ensuite faire `ifdown` puis `ifup` sur l'interface pour l'éteinder puis la rallumer
   * un petit `ip a` pour vérifier que le changement a pris effet
 
-* une fois fait :
+* **A FAIRE :**
   * utilisez une commande pour prouver que vous avez internet depuis la VM
   * prouvez que votre PC hôte et la VM peuvent communiquer
   * affichez votre table de routage sur la VM et expliquez chacune des lignes
