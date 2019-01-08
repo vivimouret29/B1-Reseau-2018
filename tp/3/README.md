@@ -113,9 +113,9 @@ Cherchez sur internet afin que votre VM :
   * un petit `ip a` pour vérifier que le changement a pris effet
 
 * **A FAIRE :**
-  * utilisez une commande pour prouver que vous avez internet depuis la VM
-  * prouvez que votre PC hôte et la VM peuvent communiquer
-  * affichez votre table de routage sur la VM et expliquez chacune des lignes
+  * *a.* utilisez une commande pour prouver que vous avez internet depuis la VM
+  * *b.* prouvez que votre PC hôte et la VM peuvent communiquer
+  * *c.* affichez votre table de routage **sur la VM** et expliquez chacune des lignes
 
 ## 5. Faire joujou avec quelques commandes
 
