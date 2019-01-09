@@ -350,7 +350,7 @@ PC1 accède déjà aux réseaux `1` et `12`, il faut juste lui dire comment acc�
 
 ### PC2
 Faire l'opération inverse.
-* PC2 devrait pouvoir ping `192.168.101.1` (ladresse de PC1 dans `1`)
+* PC2 devrait pouvoir ping `192.168.101.1` (l'adresse de PC1 dans `1`)
 
 ---
 **Appelez-moi pour que je vérifie tout ça !**  
@@ -400,5 +400,5 @@ Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir aut
 * `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
 * `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
 * `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`  
-
+  * on reviendra sur le NAT plus tard en cours :)  
 Appelez-moi si vous galérez.
