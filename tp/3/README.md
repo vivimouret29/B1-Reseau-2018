@@ -186,6 +186,7 @@ Pour notre TP :
 * connectez-vous en SSH à la machine virtuelle
 
 ## 3. Firewall
+
 CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh` justement.  
 Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
 * `firewall-cmd --list-all` pour lister toutes les règles
@@ -218,6 +219,9 @@ Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
     * utiliser `ss` pour visualiser la connexion `netcat` en cours
 
 # III. Routage statique
+
+**Pour rappel, il faut [désactiver SELinux](#annexe-1--désactiver-selinux).**  
+
 Le routage, c'est le fait d'utiliser une machine comme pivot (le routeur), entre deux réseau, afin qu'il fasse passer le trafic d'un réseau à un autre.  
 Le routage statique consiste à définir de façon simple les routes utilisables par le routeur et les machines. C'est l'administrateur qui les définit à la main.  
 
