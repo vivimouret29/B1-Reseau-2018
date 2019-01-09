@@ -17,6 +17,9 @@
 * protocole utilisé pour discuter à travers des réseaux
 * une *adresse IP* peut être "portée" par une *carte réseau*
 
+### *LAN* : Local Area Network
+* réseau local
+
 ### *MAC* : Media Access Control
 * on parle l'ici de *l'adresse MAC* ou *adresse physique*
 * elle est *obligatoirement* portée par une *carte réseau*
@@ -37,6 +40,10 @@
 * aucun tunnel n'est établi, les données sont envoyées **sans accusé de réception**
 * **on utilise UDP lorsqu'on s'en fiche de perdre certains messages sur la route, afin d'optimiser la vitesse de transport**
 * UDP est par exemple très utilisé dans les jeux en ligne (typiquement pour des FPS en ligne)
+
+### *WAN* : Wide Area Network
+* réseau étendu
+* celui que vous utilisez le plus est Internet
 
 ## Notions
 
