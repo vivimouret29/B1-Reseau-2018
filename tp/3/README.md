@@ -136,7 +136,7 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
 * afficher la table de routage
   * de l'hôte
   * de la VM
-  * mettre en évidence la ligne qui leur permet de discuter (dans chacune des tables)
+  * mettre en évidence la ligne qui leur permet de discuter *via* le réseau host-only (dans chacune des tables)
 * depuis la VM utilisez `curl` (ou `wget`) pour télécharger un fichier sur internet
 * depuis la VM utilisez `dig` pour connaître l'IP de :
   * `ynov.com`
