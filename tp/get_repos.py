@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-# Simple script to import all repos from
+# Simple script to import all of you guys repos
 
 import argparse
 
