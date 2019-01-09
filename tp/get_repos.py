@@ -8,6 +8,7 @@ import argparse
 from sys import stdout, stderr, exit
 from os import system, mkdir, path
 
+
 def cloneRepo(repo_url, repo_owner_name, repos_dir):
     """ Clone repo_url repo and place it in tp_number/repos_dir/repo_owner_name
     Returns two arrays which respectively contains :
@@ -18,7 +19,7 @@ def cloneRepo(repo_url, repo_owner_name, repos_dir):
     # Building the git command
     git_clone_command = ("git clone " + repo_url + " " 
                          + repos_dir + "/" + repo_owner_name
-                         + " &> /dev/null")
+                         + " --quiet")
 
     stdout.write("\nCloning " + repo_owner_name + "'s repo")
 
@@ -51,7 +52,7 @@ def pullRepo(repo_url, local_repo_path):
     try:
         git_pull_command = ("git --git-dir="
                             + local_repo_path
-                            + "/.git pull &> /dev/null")
+                            + "/.git pull --quiet")
 
         system(git_pull_command)
 
@@ -155,4 +156,3 @@ if len(faulty_repo_owners) > 0:
         stdout.write("\n > " + name + " : " + all_repos[name])
 
 stdout.write("\n")
-
