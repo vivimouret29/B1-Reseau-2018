@@ -136,7 +136,7 @@ Rien à faire pour le moment, juste quelques commandes utiles liées au réseau 
 * afficher la table de routage
   * de l'hôte
   * de la VM
-  * mettre en évidence la ligne qui leur permet de discuter (dans chacune des tables)
+  * mettre en évidence la ligne qui leur permet de discuter *via* le réseau host-only (dans chacune des tables)
 * depuis la VM utilisez `curl` (ou `wget`) pour télécharger un fichier sur internet
 * depuis la VM utilisez `dig` pour connaître l'IP de :
   * `ynov.com`
@@ -186,6 +186,7 @@ Pour notre TP :
 * connectez-vous en SSH à la machine virtuelle
 
 ## 3. Firewall
+
 CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh` justement.  
 Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
 * `firewall-cmd --list-all` pour lister toutes les règles
@@ -218,6 +219,9 @@ Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
     * utiliser `ss` pour visualiser la connexion `netcat` en cours
 
 # III. Routage statique
+
+**Pour rappel, il faut [désactiver SELinux](#annexe-1--désactiver-selinux).**  
+
 Le routage, c'est le fait d'utiliser une machine comme pivot (le routeur), entre deux réseau, afin qu'il fasse passer le trafic d'un réseau à un autre.  
 Le routage statique consiste à définir de façon simple les routes utilisables par le routeur et les machines. C'est l'administrateur qui les définit à la main.  
 
@@ -346,7 +350,7 @@ PC1 accède déjà aux réseaux `1` et `12`, il faut juste lui dire comment acc�
 
 ### PC2
 Faire l'opération inverse.
-* PC2 devrait pouvoir ping `192.168.101.1` (ladresse de PC1 dans `1`)
+* PC2 devrait pouvoir ping `192.168.101.1` (l'adresse de PC1 dans `1`)
 
 ---
 **Appelez-moi pour que je vérifie tout ça !**  
@@ -396,5 +400,6 @@ Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir aut
 * `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
 * `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
 * `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`  
+  * on reviendra sur le NAT plus tard en cours :)  
 
 Appelez-moi si vous galérez.
