@@ -16,9 +16,14 @@
 ### *IP* : Internet Protocol
 * protocole utilisé pour discuter à travers des réseaux
 * une *adresse IP* peut être "portée" par une *carte réseau*
+* une *adresse IP* est composée de 32 bits
+  * par exemple : `192.168.1.1`
+* pour comprendre l'IP on a besoin du [masque de sous-réseau](#masque-de-sous-r%C3%A9seau) qui lui est associé
+* la décomposition d'une *adresse IP* est vue dans le [cours 1](./1.md)
 
 ### *LAN* : Local Area Network
 * réseau local
+* les équipements qui s'y trouvent portent des [adresses privées](./3.md#ip-privéespubliques)
 
 ### *MAC* : Media Access Control
 * on parle l'ici de *l'adresse MAC* ou *adresse physique*
@@ -32,7 +37,7 @@
 * comme sont l'indique, une RFC a pour but d'être lue et commentée
 * si les gens la lisent, la commentent, la complètent, une RFC finit par contenir des choses intéressantes
 * les protocoles que vous connaissez ont tous été définis dans des RFCs :
-  * IP : [RFC 791](https://tools.ietf.org/html/rfc791)
+  * [IP](#ip--internet-protocol) : [RFC 791](https://tools.ietf.org/html/rfc791)
   * Allocation d'adresses privées : [RFC 1918](https://tools.ietf.org/html/rfc1918)
   * HTTP : [RFC 2616](https://tools.ietf.org/html/rfc2616)
   * TCP : [RFC 793](https://tools.ietf.org/html/rfc793)
@@ -108,6 +113,7 @@
   * "j'ai un réseau en `255.255.255.0`"
   * "j'ai un `/24`"
   * "j'ai un réseau avec 256 adresses possibles"
+* la décomposition d'une IP est vue dans le [cours 1](./1.md)
 
 ### Passerelle ou *Gateway*
 * la *passerelle* est un noeud agissant comme pivot, et elle permet de sortir du réseau (de chez vous vers Internet par exemple)
