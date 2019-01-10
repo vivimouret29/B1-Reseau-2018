@@ -161,6 +161,16 @@
 * on peut demander à des applications "d'écouter" sur un ou plusieurs ports
 * par exemple, pour un site web, on demande souvent au serveur Web d'écouter sur le port 443 pour HTTPS
 
+### *Stack réseau* ou *stack TCP/IP* ou Pile réseau
+* désigne toutes les applications d'une machine qui s'occupent du réseau
+* si quand vous tapez `ipconfig` il se passe quelque chose, bah y'a bien une application qui s'en occupe
+* désigne des choses bien différentes suivant les OS
+* on utilise le terme *stack réseau* pour désigner tout ce qui touche de près ou de loin au réseau sur une machine
+  * gestion d'IP
+  * gestion d'interfaces
+  * firewall
+  * et plein plein d'autres choses
+
 ### Subnetting
 * c'est le fait de découper un réseau en plusieurs sous-réseaux
 * par exemple, un `/24` contient deux `/25`
