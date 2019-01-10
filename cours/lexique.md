@@ -157,7 +157,7 @@
 * la *passerelle* est un noeud agissant comme pivot, et elle permet de sortir du réseau (de chez vous vers Internet par exemple)
 * il existe des réseaux sans passerelle
 * la passerelle possède souvent l'IP juste avant la *broadcast*, mais pas toujours (ce n'est pas le cas à Ingésup par exemple)
-* **la passerelle est une machine. L'adresse IP de gateway est donc l'adresse IP d'une machine présente sur le même réseau que nous,  contrairement à l'adresse de broadcast** c'est une adresse IP réelle, et elle est portée par un équipement.
+* **la passerelle est une machine. L'adresse IP de gateway est donc l'adresse IP d'une machine présente sur le même réseau que nous,  contrairement à l'adresse de broadcast** : c'est une adresse IP réelle, et elle est portée par un équipement.
 * **un réseau qui ne souhaite pas être connecté à d'autres réseaux ne possède pas de passerelle**
 
 ### Ports
@@ -174,9 +174,10 @@
 
 ### Routeur
 * **Très important**
-* un routeur est un équipement sur le réseau (c'est un PC quoi, mais optimisé :) )
+* un routeur est un équipement sur le réseau 
+  * c'est un PC quoi, mais optimisé :)
 * il est au milieu de plusieurs réseaux, au moins deux (sinon c'est pas un routeur !)
-  * pour rappel : "être dans un réseau" = "être branché (câble ou wifi) **+** posséder une carte réseau **+** avoir une IP dans le réseau donné"
+  * **pour rappel** : "être dans un réseau" = "être branché (câble ou wifi) **+** posséder une carte réseau **+** avoir une IP dans le réseau donné"
   * donc il a au moins deux interfaces réseaux
   * et donc au moins deux adresses IPs ! :)
   
@@ -189,7 +190,7 @@
 
 * **il permet aux gens du réseau 1 d'aller vers le réseau 2, et vice-versa**
 
-> la [passerelle](#passerelle-ou-gateway) d'un réseau, c'est souvent un routeur !
+* la [passerelle](#passerelle-ou-gateway) d'un réseau, c'est souvent un routeur !
 
 * son rôle est de connaître des "routes" et d'en faire profiter les réseaux auxquels il est connecté
   * une "route" est un chemin pour aller vers un réseau
@@ -198,6 +199,8 @@
 * il existe une route spéciale : la **route par défaut** 
   * c'est la route à prendre quand on connaît pas de routes spécifiques pour une adresse donnée
   * c'est le panneau "Toutes directions" quoi !
+  
+* **le routeur est un mec sympa : il connaît les routes, mais surtout, il les partage dans les réseaux auxquels il est connecté**
 
 ### *Stack réseau* ou *stack TCP/IP* ou Pile réseau
 * désigne toutes les applications d'une machine qui s'occupent du réseau
