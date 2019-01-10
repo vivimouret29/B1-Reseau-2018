@@ -16,6 +16,8 @@
 * permet donc d'attribuer automatiquement des adresses IPs au sein d'un [LAN](#lan--local-area-network)
 * il existe sur les réseaux pourvus de DHCP, un *serveur DHCP*
   * chez vous, c'est votre box
+* **on oppose "l'adresse par DHCP" à "l'adressage statique"**
+  * une "IP statique" ça veut dire "une IP **PAS** récupérée *via* DHCP
 
 ### *DNS* : Domain Name System
 * protocole utilisé pour associé des *un nom d'hôte et un nom de domaine* à une adresse IP
