@@ -26,6 +26,18 @@
 * sur une carte physique, elle est gravée sur la carte (on ne peut pas la changer)
 * l'*adresse MAC* est composée de 12 caractères hexadécimaux (par exemple `D4-6D-7D-00-15-3F`)
 
+### *RFC* : Request For Comments
+* document texte qui définit une notion, un concept, un protocole (principalement utilisés en informatique)
+* les RFCs peuvent écrit par n'importe qui et sont des documents publics
+* comme sont l'indique, une RFC a pour but d'être lue et commentée
+* si les gens la lisent, la commentent, la complètent, une RFC finit par contenir des choses intéressantes
+* les protocoles que vous connaissez ont tous été définis dans des RFCs :
+  * IP [RFC 791](https://tools.ietf.org/html/rfc791)
+  * Allocation d'adresses privées [RFC 1918](https://tools.ietf.org/html/rfc1918)
+  * HTTP [RFC 2616](https://tools.ietf.org/html/rfc2616)
+  * TCP [RFC 793](https://tools.ietf.org/html/rfc793)
+  * etc.
+  
 ### *TCP* : Transmission Control Protocol
 
 * permet d'établir un tunnel entre deux personnes, généralement un client et un serveur
