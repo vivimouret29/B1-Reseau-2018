@@ -32,10 +32,10 @@
 * comme sont l'indique, une RFC a pour but d'être lue et commentée
 * si les gens la lisent, la commentent, la complètent, une RFC finit par contenir des choses intéressantes
 * les protocoles que vous connaissez ont tous été définis dans des RFCs :
-  * IP [RFC 791](https://tools.ietf.org/html/rfc791)
-  * Allocation d'adresses privées [RFC 1918](https://tools.ietf.org/html/rfc1918)
-  * HTTP [RFC 2616](https://tools.ietf.org/html/rfc2616)
-  * TCP [RFC 793](https://tools.ietf.org/html/rfc793)
+  * IP : [RFC 791](https://tools.ietf.org/html/rfc791)
+  * Allocation d'adresses privées : [RFC 1918](https://tools.ietf.org/html/rfc1918)
+  * HTTP : [RFC 2616](https://tools.ietf.org/html/rfc2616)
+  * TCP : [RFC 793](https://tools.ietf.org/html/rfc793)
   * etc.
   
 ### *TCP* : Transmission Control Protocol
