@@ -169,6 +169,36 @@
 * on peut demander à des applications "d'écouter" sur un ou plusieurs ports
 * par exemple, pour un site web, on demande souvent au serveur Web d'écouter sur le port 443 pour HTTPS
 
+### Routage ou *routing*
+* c'est le fait de mettre en place et de configurer un [routeur](#routeur)
+
+### Routeur
+* **Très important**
+* un routeur est un équipement sur le réseau (c'est un PC quoi, mais optimisé :) )
+* il est au milieu de plusieurs réseaux, au moins deux (sinon c'est pas un routeur !)
+  * pour rappel : "être dans un réseau" = "être branché (câble ou wifi) **+** posséder une carte réseau **+** avoir une IP dans le réseau donné"
+  * donc il a au moins deux interfaces réseaux
+  * et donc au moins deux adresses IPs ! :)
+  
+```
+ ____________                      ____________
+|  Réseau 1  |                    |  Réseau 2  |
+|            |------ Routeur -----|            |
+|____________|                    |____________|
+```
+
+* **il permet aux gens du réseau 1 d'aller vers le réseau 2, et vice-versa**
+
+> la [passerelle](#passerelle-ou-gateway) d'un réseau, c'est souvent un routeur !
+
+* son rôle est de connaître des "routes" et d'en faire profiter les réseaux auxquels il est connecté
+  * une "route" est un chemin pour aller vers un réseau
+  * par exemple, une route c'est : "pour aller dans 192.168.1.0/24, tu passes par l'interface numéro 4"
+
+* il existe une route spéciale : la **route par défaut** 
+  * c'est la route à prendre quand on connaît pas de routes spécifiques pour une adresse donnée
+  * c'est le panneau "Toutes directions" quoi !
+
 ### *Stack réseau* ou *stack TCP/IP* ou Pile réseau
 * désigne toutes les applications d'une machine qui s'occupent du réseau
 * si quand vous tapez `ipconfig` il se passe quelque chose, bah y'a bien une application qui s'en occupe
