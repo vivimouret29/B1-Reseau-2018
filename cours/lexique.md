@@ -64,6 +64,11 @@
 ### *SSH* : Secure SHell
 * protocole/outil utilisés pour se connecter à distance sur un équipement
 * on peut alors contrôler l'équipement en passant par le réseau
+  * l'équipement distant doit faire tourner une application : un **serveur SSH** 
+    * souvent le serveur SSH écoute sur le port TCP numéro 22
+  * votre PC doit posséder un **client SSH** :
+    * la commande `ssh` (simple, puissant, léger)
+    * ou [Putty](https://www.putty.org/) (sur Windows, quand la commande `ssh` n'est pas dispo)
 
 ### *TCP* : Transmission Control Protocol
 
