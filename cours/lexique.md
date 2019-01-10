@@ -135,6 +135,16 @@
   * "j'ai un réseau avec 256 adresses possibles"
 * la décomposition d'une IP est vue dans le [cours 1](./1.md)
 
+### Pare-feu ou *firewall*
+* présent sur la plupart des équipements (PCs, serveurs, etc)
+* peut exister sous la forme d'une équipement physique
+* c'est une application qui permet de filtrer le trafic réseau d'une machine
+  * filtrage du trafic qui entre sur la machine
+    * par exemple le firewall Windows bloque le `ping` entrant par défaut
+  * filtrage du trafic qui sort de la machine
+    * surtout utilisé sur des PCs d'entreprise ou sur des serveurs
+* [la notion a été abordée dans le cours 2](./2.md#firewall)
+
 ### Passerelle ou *Gateway*
 * la *passerelle* est un noeud agissant comme pivot, et elle permet de sortir du réseau (de chez vous vers Internet par exemple)
 * il existe des réseaux sans passerelle
