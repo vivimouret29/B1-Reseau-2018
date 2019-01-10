@@ -114,6 +114,7 @@
 ### Carte réseau (ou interface réseau)
 * carte physique dans une machine (ou virtuelle, on verra ça plus tard)
 * porte forcément une adresse MAC
+  * pour une interface physique, la MAC est gravée physiquement sur le périphérique : on ne peut pas la changer
 * peut porter une adresse IP et ainsi "être dans un réseau"
 * dans nos PCs du quotidien, on en a au moins une : la carte WiFi
 
