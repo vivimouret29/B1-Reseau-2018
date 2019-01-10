@@ -1,6 +1,7 @@
 # Lexique
 
 * [Sigles et Acronymes](#siglesacronymes)
+  * une section "protocoles" verra le jour quand on y verra un peu plus clair :)
 * [Notions](#notions)
 * [Commandes](#commandes)
 
@@ -9,6 +10,19 @@
 ### *CIDR* : Classless Inter-Domain Routing
 * de façon simple, c'est le `/24` dans `192.168.1.1/24` par exemple
 * un `/24` veut dire "24 bits à 1" et correspond donc au masque `11111111.11111111.11111111.00000000` soit `255.255.255.0`
+
+### *DHCP* : Dynamic Host Configuration Protocol
+* permet d'éviter aux gens de définir leur adresse IP à la main eux-mêmes
+* permet donc d'attribuer automatiquement des adresses IPs au sein d'un [LAN](#lan--local-area-network)
+* il existe sur les réseaux pourvus de DHCP, un *serveur DHCP*
+  * chez vous, c'est votre box
+
+### *DNS* : Domain Name System
+* protocole utilisé pour associé des *un nom d'hôte et un nom de domaine* à une adresse IP
+* les *serveurs DNS* sont des serveurs à qui on peut poser des questions
+  * "donne moi le nom de domaine associé à telle IP"
+  * "donne moi l'IP associée à tel nom de domaine"
+* des outils comme [`nslookup` ou `dig`](#nslookup-ou-dig) peuvent être utilisés pour interroger des serveurs DNS à la main
 
 ### *HTTP* : HyperText Transfer Protocol
 * protocole utilisé pour discuter avec des serveurs web
@@ -44,7 +58,11 @@
   * HTTP : [RFC 2616](https://tools.ietf.org/html/rfc2616)
   * TCP : [RFC 793](https://tools.ietf.org/html/rfc793)
   * etc.
-  
+
+### *SSH* : Secure SHell
+* protocole/outil utilisés pour se connecter à distance sur un équipement
+* on peut alors contrôler l'équipement en passant par le réseau
+
 ### *TCP* : Transmission Control Protocol
 
 * permet d'établir un tunnel entre deux personnes, généralement un client et un serveur
