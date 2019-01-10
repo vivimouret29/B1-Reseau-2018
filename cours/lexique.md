@@ -201,6 +201,9 @@
   * c'est le panneau "Toutes directions" quoi !
   
 * **le routeur est un mec sympa : il connaît les routes, mais surtout, il les partage dans les réseaux auxquels il est connecté**
+  * chez vous, le routeur c'est votre Box
+  * elle connaît une route pour aller dans votre LAN et une route pour aller sur Internet
+  * et votre box est sympa : elle vous a dit que si vous aviez besoin d'aller sur internet, vous pouviez passer par elle
 
 ### *Stack réseau* ou *stack TCP/IP* ou Pile réseau
 * désigne toutes les applications d'une machine qui s'occupent du réseau
