@@ -42,3 +42,5 @@
   * [3. IP privées/publiques, LAN/WAN](./3.md)
 
 * [Lexique](./lexique.md)
+
+* [TPs](../tp)
