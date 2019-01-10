@@ -20,6 +20,8 @@
   * par exemple : `192.168.1.1`
 * pour comprendre l'IP on a besoin du [masque de sous-réseau](#masque-de-sous-r%C3%A9seau) qui lui est associé
 * la décomposition d'une *adresse IP* est vue dans le [cours 1](./1.md)
+* il existe des plages réservées d'adresses IP
+  * entre autres, [les adresses privées et publiques](./3.md#ip-privéespubliques)
 
 ### *LAN* : Local Area Network
 * réseau local
