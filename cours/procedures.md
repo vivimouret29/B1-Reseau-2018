@@ -10,8 +10,37 @@ Vous trouverez ici quelques mini-procédures pour réaliser une opération préc
 
 ## Sommaire
 
+* [Définir une IP statique](#definir-une-ip-statique)
 * [Changer son nom de domaine](#changer-son-nom-de-domaine)
 * [Editer le fichier hosts](#editer-le-fichier-hosts)
+
+---
+
+### Définir une IP statique
+**1. Repérer le nom de l'interface dont on veut changer l'IP**
+```
+ip a
+```
+**2. Modifier le fichier correspondant à l'interface**
+* il se trouve dans `/etc/sysconfig/network-scripts`
+* il porte le nom `ifcfg-<NOM_DE_L'INTERFACE>`
+* on peut le créer s'il n'existe pas
+* exemple de fichier minimaliste qui assigne `192.168.1.19/24` à l'interface `enp0s8`
+```
+NAME=enp0s8
+DEVICE=enp0s8
+
+BOOTPROTO=static
+ONBOOT=yes
+
+IPADDR=192.168.1.19
+NETMASK=255.255.255.0
+```
+**3. Redémarrer l'interface**
+```
+sudo ifdown <INTERFACE_NAME>
+sudo ifup <INTERFACE_NAME>
+```
 
 ---
 
