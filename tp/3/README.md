@@ -371,13 +371,16 @@ Faire comme sur VM1
 * VM2 devrait pouvoir ping `192.168.101.1`, l'adresse de PC1 dans le réseau `1`
 
 ## 3. Configuration des noms de domaine
-La configuration du nom de domaine d'une machine se fait en deux étapes : 
+
+La configuration du [nom de domaine](../../cours/4.md#noms-de-domaine) d'une machine se fait en deux étapes : 
+
 **1. Donner un nom à la machine**
   * ceci permet à la machine elle-même de connaître un nom
   * c'est effectué **sur la machine elle-même**
+  
 **2. Configurer un outil pour que les autres machines connaissent son nom**
   * c'est effectué **à l'extérieur de la machine**
-  * soit on configure un serveur DNS (c'est le plus courant mais un peu hardu pour le moment)
+  * soit on configure un serveur [DNS](../../cours/lexique.md#dns--domain-name-system) (c'est le plus courant mais un peu hardu pour le moment)
   * sont on remplit le fichiers `hosts` de toutes les autres machines
 
 **NOTE** : *une machine peut être jointe par son nom, même si elle ne le connaît pas elle-même. Autrement dit, dans les deux étapes citées ci-dessus, seule la deuxième est strictement obligatoire*  
@@ -390,7 +393,7 @@ Pour notre TP :
   * Linux et MacOS : `/etc/hosts`
   * Windows : `C:\Windows\System32\drivers\etc\hosts`
 
-Un tableau récapitulatif, qui sépare les notions de noms de domaine, nom d'hôtes et FQDN :  
+Un tableau récapitulatif, qui distingue les notions de [noms de domaine, nom d'hôtes et FQDN](../../cours/4.md#noms-de-domaine) :  
 
 Host | Hostname |  Domain  |     FQDN
 ---- | -------- | -------- | ------------
@@ -415,7 +418,7 @@ VM2  |   `vm2`  | `tp3.b1` | `vm2.tp3.b1`
 * création d'un routage statique simple avec des VMs Linux comme clients et les PCs hôtes comme routeurs
   * tout le monde doit connaître toutes les routes
   * `PC1`, `PC2`, `VM1` et `VM2` ont tous une route vers les réseaux `1`, `2` et `12` dans leur table de routage
-
+* aperçu de la gestion de nom de domaines
 ---
 
 ### Annexe 1 : Désactiver SELinux
@@ -432,6 +435,7 @@ Un peu plus restrictif (et donc sécurisé) que sur un Winwin. Il va falloir aut
 * `iptables -A FORWARD -o <ETHERNET_CARD_NAME> -i <HOST-ONLY_CARD_NAME> -j ACCEPT`
 * `iptables -A FORWARD -o <HOST-ONLY_CARD_NAME> -i <ETHERNET_CARD_NAME> -j ACCEPT`
 * `iptables -t nat -A POSTROUTING -s <DESTINATION_NETWORK_CIDR> -j MASQUERADE`  
-  * on reviendra sur le NAT plus tard en cours :)  
+  * on reviendra sur le NAT plus tard en cours :)
+  * c'pas du vrai vrai routing ça ehe
 
 Appelez-moi si vous galérez.
