@@ -79,3 +79,13 @@ Par exemple, pour faire correspondre l'IP `192.168.1.19` aux noms `monpc` et `mo
 ```
 ping monpc.chezmoi
 ```
+
+### Interagir avec le firewall
+
+CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh` justement.  
+Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
+* `firewall-cmd --list-all` pour lister toutes les règles
+* `firewall-cmd --add-port=80/tcp --permanent` pour autoriser les connexions sur le port TCP 80 
+* `firewall-cmd --remove-port=80/tcp --permanent` pour supprimer une règle qui autorisait les connexions sur le port TCP 80 
+* `firewall-cmd --reload` permet aux modifications effectuées de prendre effet
+
