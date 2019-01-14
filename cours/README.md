@@ -16,7 +16,7 @@
 
 ## Objectif du cours réseau B1
 * appréhender les termes et protocoles de bases
-  * *[IP](./lexique.md#ip--internet-protocol), [MAC](./lexique.md#mac--media-access-control), [routage](./lexique.md#routage-ou-routing), client/serveur, [DHCP](./lexique.md#dhcp--dynamic-host-configuration-protocol), [DNS](./lexique.md#dns--domain-name-system), [HTTP](./lexique.md#http--hypertext-transfer-protocol), etc.*
+  * *[IP](./lexique.md#ip--internet-protocol), [MAC](./lexique.md#mac--media-access-control), [routage](./lexique.md#routage-ou-routing), [client/serveur](./3.md#clientserveur), [DHCP](./lexique.md#dhcp--dynamic-host-configuration-protocol), [DNS](./lexique.md#dns--domain-name-system), [HTTP](./lexique.md#http--hypertext-transfer-protocol), etc.*
 
 * maîtriser la [stack réseau](./lexique.md#stack-réseau-ou-stack-tcpip-ou-pile-réseau) de son propre poste (Windows, Linux ou Mac)
   * gestion de [cartes réseau](./lexique.md#carte-réseau-ou-interface-réseau)
