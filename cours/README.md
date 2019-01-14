@@ -8,6 +8,10 @@
 
 * [Lexique](./lexique.md)
 
+* [Procédures](./procedures.md)
+  * mini-tutos pour CentOS7
+  
+
 * [TPs](../tp)
 
 ## Objectif du cours réseau B1
