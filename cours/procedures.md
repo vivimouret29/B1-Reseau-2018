@@ -10,7 +10,7 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
 
 ## Sommaire
 
-* [Définir une IP statique](#definir-une-ip-statique)
+* [Définir une IP statique](#définir-une-ip-statique)
 * [Changer son nom de domaine](#changer-son-nom-de-domaine)
 * [Editer le fichier hosts](#editer-le-fichier-hosts)
 * [Interagir avec le firewall](#interagir-avec-le-firewall)
