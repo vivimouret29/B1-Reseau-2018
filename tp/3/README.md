@@ -390,8 +390,8 @@ VM1  |   `vm1`  | `tp3.b1` | `vm1.tp3.b1`
 VM2  |   `vm2`  | `tp3.b1` | `vm2.tp3.b1`
 
 **But à atteindre** :
-* la VM1 doit pouvoir ping tous les [FQDN](../../lexique.md#fqdn) y compris `vm2.tp3.b1`
-* la VM2 doit pouvoir ping tous les [FQDN](../../lexique.md#fqdn) y compris `vm2.tp3.b1`
+* la VM1 doit pouvoir ping tous les [FQDN](../../cours/lexique.md#fqdn) y compris `vm2.tp3.b1`
+* la VM2 doit pouvoir ping tous les [FQDN](../../cours/lexique.md#fqdn) y compris `vm2.tp3.b1`
 * un ultime `netcat` entre `vm1.tp3.b1` et `vm2.tp3.b1`
 
 ---
