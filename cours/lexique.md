@@ -26,6 +26,11 @@
   * "donne moi l'IP associée à tel nom de domaine"
 * des outils comme [`nslookup` ou `dig`](#nslookup-ou-dig) peuvent être utilisés pour interroger des serveurs DNS à la main
 
+### *FQDN* : Fully Qualified Domain Name
+* c'est le nom complet d'un hôte (= d'une machine) sur le réseau
+* il est la concaténation du nom d'hôte et du domaine
+* [cf. le cours 4](./4.md#noms-de-domaine)
+
 ### *HTTP* : HyperText Transfer Protocol
 * protocole utilisé pour discuter avec des serveurs web
 
