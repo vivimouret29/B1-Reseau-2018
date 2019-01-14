@@ -376,7 +376,7 @@ Faire comme sur VM1
 Pour notre TP : 
 * donner un nom de domaine aux machines virtuelles 
   * PAS aux hôtes physiques, pour éviter de pourrir votre vraie configuration
-* remplir le fichier `hosts` des machines virtuelles **ET** des PCs physiques
+* [remplir le fichier `hosts` des machines virtuelles](../../cours/procedures.md#editer-le-fichier-hosts) **ET** des PCs physiques
   * Linux et MacOS : `/etc/hosts`
   * Windows : `C:\Windows\System32\drivers\etc\hosts`
 
@@ -390,8 +390,8 @@ VM1  |   `vm1`  | `tp3.b1` | `vm1.tp3.b1`
 VM2  |   `vm2`  | `tp3.b1` | `vm2.tp3.b1`
 
 **But à atteindre** :
-* la VM1 doit pouvoir ping tous les FQDN y compris `vm2.tp3.b1`
-* la VM2 doit pouvoir ping tous les FQDN y compris `vm2.tp3.b1`
+* la VM1 doit pouvoir ping tous les [FQDN](../../lexique.md#fqdn) y compris `vm2.tp3.b1`
+* la VM2 doit pouvoir ping tous les [FQDN](../../lexique.md#fqdn) y compris `vm2.tp3.b1`
 * un ultime `netcat` entre `vm1.tp3.b1` et `vm2.tp3.b1`
 
 ---
