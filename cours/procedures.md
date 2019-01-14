@@ -1,6 +1,6 @@
 # Procédures
 
-Vous trouverez ici quelques mini-procédures pour réaliser une opération précise, sur une machine précise. Ce sera évidemment principalement utilise pour notre cours de réseau, mais peut-être serez-vous amenés à le réutiliser plus tard.  
+Vous trouverez ici quelques mini-procédures pour réaliser certaines opérations récurrentes. Ce sera évidemment principalement utilisé pour notre cours de réseau, mais peut-être serez-vous amenés à le réutiliser plus tard.  
 
 **Elles sont écrites pour un système CentOS7**. Vous en apprendrez (au moins un peu) plus sur le monde GNU/Linux en temps et en heure. Sachez que :
 * tout ça est faisable (pour la plupart) sur Windows et Mac. Vous demanderez à google des équivalents
@@ -13,6 +13,7 @@ Vous trouverez ici quelques mini-procédures pour réaliser une opération préc
 * [Définir une IP statique](#definir-une-ip-statique)
 * [Changer son nom de domaine](#changer-son-nom-de-domaine)
 * [Editer le fichier hosts](#editer-le-fichier-hosts)
+* [Interagir avec le firewall](#interagir-avec-le-firewall)
 
 ---
 
