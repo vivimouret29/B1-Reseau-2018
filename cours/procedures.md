@@ -13,6 +13,7 @@ Vous trouverez ici quelques mini-procédures pour réaliser une opération préc
 * [Changer son nom de domaine](#changer-son-nom-de-domaine)
 * [Editer le fichier hosts](#editer-le-fichier-hosts)
 
+---
 
 ### Changer son nom de domaine
 
@@ -31,6 +32,8 @@ sudo hostname vm1.tp3.b1
 ```
 hostname --fqdn
 ```
+
+---
 
 ### Editer le fichier hosts
 
