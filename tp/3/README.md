@@ -390,7 +390,8 @@ Pour notre TP :
   * Linux et MacOS : `/etc/hosts`
   * Windows : `C:\Windows\System32\drivers\etc\hosts`
 
-Un tableau récapitulatif, qui sépare les notions de noms de domaine, nom d'hôtes et FQDN.
+Un tableau récapitulatif, qui sépare les notions de noms de domaine, nom d'hôtes et FQDN :  
+
 Host | Hostname |  Domain  |     FQDN
 ---- | -------- | -------- | ------------
 PC1  |   `pc1`  | `tp3.b1` | `pc1.tp3.b1`
