@@ -180,39 +180,36 @@ Pour notre TP :
 * CentOS 7 intègre déjà un serveur SSH installé, configuré, et lancé
 * si vous êtes sur Windows
   * téléchargez [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-  * c'est votre client SSH
+  * **c'est votre client SSH**
 * si vous êtes sur GNU/Linux ou MacOS
   * ouvrez un terminal, vous avez la commande `ssh`
-  * c'est votre client SSH
+  * **c'est votre client SSH**
 * connectez-vous en SSH à la machine virtuelle
 
 ## 3. Firewall
 
 CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh` justement.  
-Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
-* `firewall-cmd --list-all` pour lister toutes les règles
-* `firewall-cmd --add-port=80/tcp --permanent` pour autoriser les connexions sur le port TCP 80 
-* `firewall-cmd --remove-port=80/tcp --permanent` pour supprimer une règle qui autorisait les connexions sur le port TCP 80 
-* `firewall-cmd --reload` permet aux modifications effectuées de prendre effet
 
-* A. à faire : 
+Rdv dans la section procédure pour savoir comment [interagir avec le firewall de CentOS](../../cours/procedures.md#interagir-avec-le-firewall).  
+
+* **A. SSH** : 
   * modifier le fichier `/etc/ssh/sshd_config`
     * changer le numéro du port sur lequel votre serveur SSH écoute
-    * **utilisez un port strictement supérieur à 1024** (2222 par exemple)
+    * **utilisez un port strictement supérieur à 1024** (`2222` par exemple)
   * redémarrez le serveur SSH pour que le changement prenne effet
     * `systemctl restart sshd`
-  * vérifiez que votre serveur SSH écoute sur un port différent de 22 (le vôtre)
-    * utilisez une commande `ss`
+  * vérifiez que votre serveur SSH écoute sur un port différent de `22` (le vôtre)
+    * utilisez [la commande `ss`](../../cours/lexique.md#netstat-ou-ss)
   * connectez-vous au serveur en utilisant ce port
     * utilisez votre client SSH
   * sans autre modification, la connexion devrait échouer
     * expliquez pourquoi
     * trouvez une solution
     
-* B. à faire: 
+* **B. `netcat`** 
   * dans un premier terminal 
     * lancer un serveur `netcat` dans un terminal (commande `nc -l`)
-    * le serveur doit écouter sur le port 5454 en TCP
+    * le serveur doit écouter sur le port `5454` en TCP
     * il faudra autoriser ce port dans le firewall
   * dans un deuxième terminal
     * se connecter au serveur `netcat` (commande `nc`)
