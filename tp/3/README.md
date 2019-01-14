@@ -372,19 +372,6 @@ Faire comme sur VM1
 
 ## 3. Configuration des noms de domaine
 
-La configuration du [nom de domaine](../../cours/4.md#noms-de-domaine) d'une machine se fait en deux étapes : 
-
-**1. Donner un nom à la machine**
-  * ceci permet à la machine elle-même de connaître un nom
-  * c'est effectué **sur la machine elle-même**
-  
-**2. Configurer un outil pour que les autres machines connaissent son nom**
-  * c'est effectué **à l'extérieur de la machine**
-  * soit on configure un serveur [DNS](../../cours/lexique.md#dns--domain-name-system) (c'est le plus courant mais un peu hardu pour le moment)
-  * sont on remplit le fichiers `hosts` de toutes les autres machines
-
-**NOTE** : *une machine peut être jointe par son nom, même si elle ne le connaît pas elle-même. Autrement dit, dans les deux étapes citées ci-dessus, seule la deuxième est strictement obligatoire*  
-* ne me faites pas dire ce que je n'ai pas dit, le 1 reste important dans beaucoup de cas
 
 Pour notre TP : 
 * donner un nom de domaine aux machines virtuelles 
