@@ -359,7 +359,7 @@ Faire l'opération inverse.
 ### VM1
 VM1 n'a accès qu'au réseau `1`. Tristesse. Il faut dire à VM1 qu'elle peut joindre les réseaux `12` et `2` en utilisant le lien qui l'unit avec `PC1`. Pour lui dire d'accéder au réseau `12` en passant par `1` : 
 * `ip route add <IP_12> via <IP_1_PC1> dev <INTERFACE_1_NAME>`
-* `ip route add 192.168.112.0/24 via 192.168.101.1 dev enp0s8`
+* `ip route add 192.168.112.0/30 via 192.168.101.1 dev enp0s8`
 * taper une deuxième commande pour lui dire d'accéder au réseau `2`
 
 * VM1 devrait pouvoir ping `192.168.112.2`, l'adresse de PC2 dans le réseau `12`
