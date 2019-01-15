@@ -196,6 +196,7 @@ Rdv dans la section procédure pour savoir comment [interagir avec le firewall d
   * modifier le fichier `/etc/ssh/sshd_config`
     * changer le numéro du port sur lequel votre serveur SSH écoute
     * **utilisez un port strictement supérieur à 1024** (`2222` par exemple)
+    * **les lignes commençant par un `#` sont des commentaires. Décommentez-la ligne où vous écrivez !**
   * redémarrez le serveur SSH pour que le changement prenne effet
     * `systemctl restart sshd`
   * vérifiez que votre serveur SSH écoute sur un port différent de `22` (le vôtre)
@@ -207,13 +208,13 @@ Rdv dans la section procédure pour savoir comment [interagir avec le firewall d
     * trouvez une solution
     
 * **B. `netcat`** 
-  * dans un premier terminal 
+  * dans un premier terminal sur la VM
     * lancer un serveur `netcat` dans un terminal (commande `nc -l`)
     * le serveur doit écouter sur le port `5454` en TCP
     * il faudra autoriser ce port dans le firewall
-  * dans un deuxième terminal
+  * dans un deuxième terminal sur l'hôte
     * se connecter au serveur `netcat` (commande `nc`)
-  * dans un troisième terminal
+  * dans un troisième terminal sur la VM
     * utiliser `ss` pour visualiser la connexion `netcat` en cours
 
 # III. Routage statique
