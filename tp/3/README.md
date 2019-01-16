@@ -336,6 +336,7 @@ PC1 accède déjà aux réseaux `1` et `12`, il faut juste lui dire comment acc�
   * `route add <IP_2> mask 255.255.255.0 <IP_12_PC2>`
   * soit `route add 192.168.102.0/24 mask 255.255.255.0 192.168.112.2`
 * GNU/Linux
+  * **EDIT : sur CentOS 7, voir [la page dédiée dans la page de procédures](../../cours/procedures.md#ajouter-une-route-statique)**
   * `ip route add <IP_2> via <IP_12_PC2> dev <INTERFACE_12_NAME>`
   * par exemple `ip route add 192.168.102.0/24 via 192.168.112.2 dev eth0`
 * MacOS
