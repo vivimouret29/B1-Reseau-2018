@@ -11,9 +11,11 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
 ## Sommaire
 
 * [Définir une IP statique](#définir-une-ip-statique)
+* [Ajouter une route statique](#ajouter-une-route-statique)
 * [Changer son nom de domaine](#changer-son-nom-de-domaine)
 * [Editer le fichier hosts](#editer-le-fichier-hosts)
 * [Interagir avec le firewall](#interagir-avec-le-firewall)
+
 
 ---
 
@@ -42,6 +44,27 @@ NETMASK=255.255.255.0
 sudo ifdown <INTERFACE_NAME>
 sudo ifup <INTERFACE_NAME>
 ```
+
+---
+
+### Ajouter une route statique
+
+* **temporairement**
+  * `ip route add <NETWORK_ADDRESS> via <LOCAL_IP> dev <LOCAL_INTERFACE_NAME>
+  * par exemple `ip route add 192.168.102.0/24 via 192.168.112.2 dev eth0`
+  * ce changement sera effacé après `reboot` ou `systemctl restart network`
+
+* **définitivement**
+  * comme toujours, afin de rendre le changement permanent, on va l'écrire dans un fichier
+  * il peut exister un fichier de route par interface
+  * les fichiers de routes :
+    * sont dans `/etc/sysconfig/network-scripts/`
+    * sont nommés `route-<INTERFACE_NAME>`
+    * par exemple `/etc/sysconfig/network-scripts/route-enp0s8`
+    * contiennent la même ligne que `ip route add` : 
+```
+192.168.102.0/24 via 192.168.112.2 dev eth0
+192.168.112.0/24 via 192.168.112.2 dev eth0```
 
 ---
 
