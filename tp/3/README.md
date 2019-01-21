@@ -221,6 +221,8 @@ Rdv dans la section procédure pour savoir comment [interagir avec le firewall d
 
 **Pour rappel, il faut [désactiver SELinux](#annexe-1--désactiver-selinux).**  
 
+**Pour cette partie, désactivez aussi votre interface NAT. VOus ne l'activerez que lorsque strictement nécessaire (qund il faut aller sur internet)**  
+
 Le routage, c'est le fait d'utiliser une machine comme pivot (le routeur), entre deux réseau, afin qu'il fasse passer le trafic d'un réseau à un autre.  
 Le routage statique consiste à définir de façon simple les routes utilisables par le routeur et les machines. C'est l'administrateur qui les définit à la main.  
 
@@ -395,6 +397,7 @@ VM2  |   `vm2`  | `tp3.b1` | `vm2.tp3.b1`
 * la VM1 doit pouvoir ping tous les [FQDN](../../cours/lexique.md#fqdn--fully-qualified-domain-name) y compris `vm2.tp3.b1`
 * la VM2 doit pouvoir ping tous les [FQDN](../../cours/lexique.md#fqdn--fully-qualified-domain-name) y compris `vm2.tp3.b1`
 * un ultime `netcat` entre `vm1.tp3.b1` et `vm2.tp3.b1`
+* un [`traceroute`](../../cours/lexique.md#traceroute) peut être sympa pour voir le routing à l'oeuvre !
 
 ---
 
