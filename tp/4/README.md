@@ -20,7 +20,7 @@
     * configuration routage statique ([TP 3](../3/README.md))
 
 # TP 4 - Spéléologie réseau : descente dans les couches
-Gné ? "Spéléologie" ? Oui, on va descendre dans les couches du *modèles OSI* (on y reviendraaaaaa), explorer le principe d'encapsulation, et regarder un peu comment ça fonctionne **vraiment** tout ça.  
+Gné ? "Spéléologie" ? Oui, on va descendre dans les couches du *modèle OSI* (on y reviendraaaaaa), explorer le principe d'encapsulation, et regarder un peu comment ça fonctionne **vraiment** tout ça.  
 
 **En vrai c'est le TP qui fait un peu mal aux dents, alors gardez le sourire, soyez motivées et tout ira bien.** :)  
 
