@@ -50,6 +50,7 @@ Ha et **c'est un TP solo** ! Vous pouvez vous aider (aidez-vous, vous êtes beau
 * **allez à votre rythme.** Le but n'est pas de finir le TP, mais plutôt de bien saisir et correctement appréhender les différentes notions
 * **n'hésitez pas à me demander de l'aide régulièrement** mais essayez toujours de chercher un peu par vous-mêmes avant :)
 * pour moult raisons, il sera préférable pendant les cours de réseau de **désactiver votre firewall**. Vous comprendrez ces raisons au fur et à mesure du déroulement du cours très justement. N'oubliez pas de le réactiver après coup.
+* **utilisez SSH dès que possible**
 
 # Sommaire
 
@@ -93,6 +94,9 @@ sudo sed -i 's/enforcing/permissive/g' /etc/selinux/config # permanent
 
 # Mise à jour des dépôts
 sudo yum update -y
+
+# Installation de dépôts additionels
+sudo yum install -y epel-release
 
 # Installation de plusieurs paquets réseau dont on se sert souvent
 sudo yum install -y traceroute bind-utils tcpdump nc
@@ -148,10 +152,14 @@ client  <--net1--> router <--net2--> server
   * temporairement avec `ifdown`
   * de façon permanente dans le fichier `ifcfg-` dédié à cette carte
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
+* [ ] La connexion SSH doit être fonctionnelle
+  * vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 * [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
 * [ ] `client2` ping `router1.tp4` sur l'IP `10.2.0.254`
+
+**NB** : pour tester si vos changements sont permanents, vous pouvez essayer de reboot. Je vous conseille de le faire si vous comptez bosser sur plusieurs jours. 
 
 ---
 
@@ -163,7 +171,7 @@ Machine | `net1` | `net2`
 `router1.tp4` | `10.1.0.254` | `10.2.0.254`
 `server1.tp4` | X | `10.2.0.10` 
 
-**IMPORTANT** : habituez-vous à faire ce genre de tableau, c'est une méthode qui vous fera gagner énormément de temps. Pensez à quand vous aurez ~10 machines avec des IPs différentes. Je les ferai pas toujours à votre place ;)
+> Habituez-vous à faire ce genre de tableau, c'est une méthode qui vous fera gagner énormément de temps. Pensez à quand vous aurez ~10 machines avec des IPs différentes. Je les ferai pas toujours à votre place ;)
 
 ## 3. Mise en place du routage statique
 
@@ -208,15 +216,17 @@ ARP est le protocole qui permet de connaître la MAC d'une machine quand on conn
 
 Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça se passe](../../cours/procedures.md#gérer-sa-table-arp). 
 
+> **Il est inutile de juste dérouler le truc, inutile** ***d'apprendre***. **Essayez de bien** ***comprendre*** **et ça deviendra parfaitement naturel.**
+
 ### A. Manip 1
 
-1. vider la table ARP de vos machines
+1. vider la table ARP de **toutes** vos machines
 2. sur `client1`
     * afficher la table ARP
-    * expliquer la seule ligne visible
+    * **expliquer la seule ligne visible**
 3. sur `server1`
     * afficher la table ARP
-    * expliquer la seule ligne visible
+    * **expliquer la seule ligne visible**
 4. sur `client1`
     * ping `server1`
     * afficher la table ARP
@@ -224,3 +234,159 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
 5. sur `server1`
     * afficher la table ARP
     * **expliquer le changement**
+
+### B. Manip 2
+1. vider la table ARP de **toutes** vos machines
+2. sur `router1`
+    * afficher la table ARP
+    * **expliquer les lignes**
+3. sur `client1`
+    * ping `server1`
+2. sur `router1`
+    * afficher la table ARP
+    * **expliquer le changement**
+
+### C. Manip 3
+1. vider la table ARP de **toutes** vos machines
+2. sur l'hôte (votre PC)
+  * afficher la table ARP
+  * vider la table ARP 
+  * afficher de nouveau la table ARP
+  * attendre un peu
+  * afficher encore la table ARP
+  * **expliquer le changement**
+
+### D. Manip 4
+1. vider la table ARP de **toutes** vos machines
+2. sur `client1`
+  * afficher la table ARP
+  * activer la carte NAT
+  * joindre internet (`curl google.com` par exemple)
+  * afficher la table ARP
+  * **expliquer le changement**
+    * expliquer qui porte l'IP qui vient de pop
+
+> **Je vous conseille très fortement de reprendre le tableau avec les IP plus haut et d'y ajouter les adresses MAC de chacune des interfaces pour la suite.**
+
+
+## 2. Wireshark
+
+Ok. On va aller voir ce qui s'est passé exactement sur le réseau. Analyser les trames réseau une par une !
+
+Si ce n'est pas déjà fait :
+* téléchargez Wireshark sur votre PC
+* téléchargez `tcpdump` sur `router1`
+
+On va capturer le trafic qui passe par `router1` :
+* on doit dire à Wireshark d'intercepter et noter tout ce qui passe par une interface spécifique
+* actuellement, votre PC est connecté en SSH à `router1`
+* pour ce faire, vous avez choisi l'une de ses deux IPs pour vous connecter 
+  * `10.1.0.254` ou `10.2.0.254`
+* vu que vous êtes connecté en SSH, vous envoyez des trames en permanence sur l'IP choisie
+* **on va donc capturer le trafic de l'interface à laquelle vous n'êtes PAS connecté** pour éviter le bruit généré par SSH
+
+On va procéder comme suit :
+* Wireshark s'appelle `tcpdump` en ligne de commande
+* on va dire à `tcpdump`
+  * d'intercepter le trafic sur une interface spécifique de `router1`
+  * d'enregistrer tout ce qu'il voit passer dans un fichier
+  * les fichiers Wireshark portent l'extension `.pcap`
+* pendant que `tcpdump` intercepte le trafic
+  * on va envoyer divers messages de `client1` à `server1`
+* une fois que les messages auront été transmis
+  * on fermera `tcpdump`
+  * on enverra le fichier `.pcap` sur notre hôte
+  * on pourra visualiser le contenu du fichier `.pcap` avec une jolie interface graphique !
+
+Let's go !
+
+## A. Interception d'ARP et `ping`
+
+On a vu dans la partie du TP concernant l'ARP que le moindre message envoyé sur le réseau nécessite une MAC de destination. Elle est connue grâce à un message ARP broadcast.  
+
+On va `ping server1` depuis `client1` et observer à la fois les messages ARP et les messages de `ping` :
+1. sur `router1`
+    * lancer Wireshark pour enregistrer le trafic qui passer par l'interface choisie et enregistrer le trafic dans un fichier `ping.pcap` :
+      * `sudo tcpdump -i enp0s9 -w ping.pcap`
+    
+2. sur `client1`
+    * vider la table ARP
+    * envoyer 4 pings à `server1`
+    * `ping -c 4 server1`
+
+3. sur `router1`
+    * quitter la capture (CTRL + C)
+    * vérifier la présenc edu fichier `ping.pcap` avec un `ls`
+    * envoyer le fichier `ping.pcap` sur votre hôte
+      * si vous savez pas comment, ou si vous voulez des conseils sur des moyens rapides et/ou secure de le faire, appelez-moi !
+
+4. sur l'hôte (votre PC) :
+    * ouvrir le fichier `ping.pcap` dans Wireshark
+    * essayez de comprendre un peu toutes les lignes (il devrait y en avoir une dizaine tout au plus !)
+    * vous devriez voir :
+      * la question pour connaître la MAC de la destination
+        * protocole ARP
+        * "Who has .... ? Tell ...." 
+        * envoyée en broadcast
+      * la réponse
+        * protocole ARP
+        * "... is at ..."
+        * envoyée à celui qui a posé la question
+      * les pings aller 
+        * "ping !"
+        * protocole ICMP
+        * message `ECHO request`
+      * les ping retour 
+        * "pong !" 
+        * protocole ICMP
+        * message `ECHO reply`
+    * **Important**
+      * notez que ARP **n'est pas** encapsulé dans IP, c'est un paquet ARP dans une trame ethernet
+      * notez que ICMP est encapsulé dans IP, c'est un datagramme ICMP, dans un paquet IP, dans une trame Ethernet !
+
+## B. Interception d'une communication `netcat`
+
+Bon bah je crois que vous le voyez venir :
+* intercepter le trafic 
+  * depuis `router1`
+  * pendant que `client1` se connecte au serveur `netcat` de `server1`
+    * oubliez pas d'ouvrir le port firewall sur `server1`
+    * videz les tables ARP de tout le monde, comme ça on verra encore les messages ARP dans la capture
+    * échangez quelques messages pour avoir de la matière à étudier :)
+  * nommez la capture `netcat_ok.pcap`
+
+Envoyez le fichier `netcat_ok.pcap` sur votre hôte, puis ouvrez le avec Wireshark. Mettez en évidence : 
+* l'établissement de la connexion TCP
+  * c'est le "3-way handshake" :
+  * le client envoie `SYN` : demande de synchronisation
+  * le serveur répond `SYN,ACK` : il accepte la synchronisation
+  * le client répond `ACK` : "ok frer, on est bien connectés, on peut échanger de la donnée maintenant !"
+* vos messages qui circulent
+
+## C. Interception d'un trafic HTTP
+
+Ca va être la même chose, mais on va intercepter du trafic HTTP. Du trafic web quoi ! De l'HTML qui transite sur le réseau toussa toussa.
+
+Pour que ça se fasse dans de bonnes conditions, je vous propose :
+* on va installer un serveur web sur `server1`
+  * tkt frer, ce sera guidé, il y aura très peu de choses à faire, on veut juste un truc simple qui fonctionne
+  * c'est quoi déjà un serveur web ?
+    * c'est juste une application, qui écoute derrière le port d'une IP !
+    * si on lui parle en HTTP, elle répond en HTTP
+    * avec firefox ou `curl`
+* et on va installer une interface graphique sur `client1`
+  * ouais parce qu'il n'y a aucun problème pour avoir une interface graphique avec CentOS en fait !
+  * ça simulera un peu mieux un "client" comme vous les connaissez
+  * idem, ce sera guidé, y'aura juste à reboot la VM et paf une interface graphique
+* le but ?
+  * installer et lancer un serveur web sur `server1` (son nom c'est `nginx`)
+  * installer et lancer un client web sur `client1` (son nom c'est Firefox :) )
+  * se connecter au serveur web de `server1` avec le Firefox de `client1`
+  * intercepter le trafic avec `router1`
+  * visualiser le trafic HTTP sur votre hôte avec Wireshark
+
+### Install et config du serveur Web
+
+**Tout se passe sur `server1` uniquement ici !**
+
+On va faire ça un peu bête et méchant, le but est juste d'avoir un truc qui marche. Vous jouerez avec des serveurs web ailleurs que dans mes cours :)
