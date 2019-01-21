@@ -5,6 +5,7 @@
 * Manipulations IP et masque (avec le [binaire](../../cours/lexique.md#binaire))
 * Adressage d'IP statique et dynamique sur vos OS
 * Firewall (bref)
+* Routage statique
 * Ligne de commande
   * navigation de dossier
   * `ipconfig` ou `ifconfig` suivant l'OS
@@ -13,7 +14,7 @@
 * Utilisation de CentOS
   * installation simple
   * utilisation CLI simple
-    * `man, ``cd`, `ls`, `nano`, `cat`
+    * `man`, `cd`, `ls`, `nano`, `cat`
   * configuration réseau (voir la fiche de [procédures](../../cours/procedures.md))
     * configuration d'interface
     * gestion simplifié de nom de domaine
