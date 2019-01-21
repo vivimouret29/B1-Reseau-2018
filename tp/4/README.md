@@ -390,3 +390,67 @@ Pour que ça se fasse dans de bonnes conditions, je vous propose :
 **Tout se passe sur `server1` uniquement ici !**
 
 On va faire ça un peu bête et méchant, le but est juste d'avoir un truc qui marche. Vous jouerez avec des serveurs web ailleurs que dans mes cours :)
+
+En partant du principe que vous n'avez raté aucune étape lors de [la réalisation de la VM-patron](#0-préparation-dune-vm-patron) :
+
+```
+# Allumer l'interface NAT
+sudo ifup enp0s3
+
+# Installation de nginx
+sudo yum install -y nginx
+
+# Ouverture du port firewall
+sudo firewall-cmd --add-port=80/tcp
+sudo firewall-cmd --reload
+
+# Lancement du serveur web
+sudo systemctl start nginx
+
+# Eteindre l'interface NAT
+sudo ifdown enp0s3
+```
+
+Pour tester si c'est ok :
+* sur `server1`
+  * `curl localhost:80`
+* sur `router1`
+  * `curl` vers l'IP de `server1`
+* sur l'hôte (votre PC)
+  * navigateur web sur `http://<IP_server1>:80`
+
+### Install et config du client web
+
+**Tout se passe sur `client1` uniquement ici !**
+
+
+## Annexe 1 : Instllation d'un client graphique
+
+Idem, bête et méchant, vous jouerez avec les interfaces graphiques Linux plus tard. (pour info on va installer l'interface [xfce](https://www.xfce.org/) réputée pour être légère)
+
+Même si c'est "léger" ça va prendre plusieurs centaines de Mo à l'installation. La connexion à l'école sera probablement un peu short...
+
+En partant du principe que vous n'avez raté aucune étape lors de [la réalisation de la VM-patron](#0-préparation-dune-vm-patron) :
+* éteindre la VM
+  * ajouter un peu de RAM, de RAM vidéo, et un proc histoire d'avoir un truc un minimum fluide
+  * 1024Mo RAM
+  * 128Mo RAM vidéo
+  * 2 procs
+* allumer la VM, et :
+```
+# Allumer l'interface NAT
+sudo ifup enp0s3
+
+# Installation d'un serveur X
+sudo yum groupinstall "X Window system"
+
+# Installtion de xfce
+sudo yum groupinstall xfce
+
+# Configuration du système
+sudo systemctl isolate graphical.target
+sudo systemctl set-default graphical.target
+
+# Reboot frer
+sudo reboot
+```
