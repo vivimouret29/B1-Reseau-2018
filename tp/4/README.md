@@ -142,7 +142,9 @@ Checklist (à faire sur toutes les machines) :
 * `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
 * `client2` ping `router1.tp4` sur l'IP `10.2.0.254`
 
-Petit tableau récapitulatif :
+---
+
+Petit tableau récapitulatif :  
 Machine | `net1` | `net2`
 --- | --- | ---
 `client1.tp4` | `10.1.0.10` | X
