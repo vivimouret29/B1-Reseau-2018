@@ -3,31 +3,28 @@
 # Notions vues avant le TP
 
 * Manipulations IP et masque (avec le [binaire](../../cours/lexique.md#binaire))
-* Adressage d'IP statique et dynamique sur vos OS
-* Firewall (bref)
-* Routage statique
-* Ligne de commande
-  * navigation de dossier
-  * `ipconfig` ou `ifconfig` suivant l'OS
-  * `nmap` (un peu)
-  * `netcat` ou `nc` suivant l'OS
+* Notions :
+  * Firewall
+  * Routage (statique)
+  * IP, Ports, MAC
 * Utilisation de CentOS
   * installation simple
-  * utilisation CLI simple
+  * utilisation CLI simple (cf [les commandes du Lexique](../../cours/lexique.md#commandes)
     * `man`, `cd`, `ls`, `nano`, `cat`
+    * `ip a`, `ping`, `nc`, `traceroute`, `ss`
   * configuration réseau (voir la fiche de [procédures](../../cours/procedures.md))
-    * configuration d'interface
+    * configuration d'[interfaces](../../cours/lexique.md#carte-réseau-ou-interface-réseau)
     * gestion simplifié de nom de domaine
       * hostname, FQDN, fichier `/etc/hosts`
     * configuration firewall
-    * configuration routage statique
+    * configuration routage statique ([TP 3](../3/README.md))
 
 # TP 4 - Spéléologie réseau : descente dans les couches
 Gné ? "Spéléologie" ? Oui, on va descendre dans les couches du *modèles OSI* (on y reviendraaaaaa), explorer le principe d'encapsulation, et regarder un peu comment ça fonctionne **vraiment** tout ça.  
 
 **En vrai c'est le TP qui fait un peu mal aux dents, alors gardez le sourire, soyez motivées et tout ira bien.** :)  
 
-Ha et **c'est un TP solo** ! Vous pouvez vous aider (aidez-vous, vous êtes beaux et forts), mais un rendu/personne exigé ! 
+Ha et **c'est un TP solo** ! Vous pouvez vous aider entre vous (oui, aidez-vous, vous êtes beaux et forts), **mais un rendu/personne exigé !**
 
 # Déroulement et rendu du TP 
 * vous utiliserez un l'hyperviseur de votre choix parmi : 
@@ -66,11 +63,11 @@ Ha et **c'est un TP solo** ! Vous pouvez vous aider (aidez-vous, vous êtes beau
 
 --- 
 # Préparation d'une VM "patron"
-Bon c'est rigolo d'installer CentOS, mais c'est vite chiant. Nos hyperviseurs permettent de cloner des machines. Sauf que vos machines précédentes, vous les avez bien pourries !  
+Bon c'est rigolo d'installer CentOS, mais c'est vite chiant. Nos hyperviseurs permettent de cloner des machines déjà existantes. Sauf que vos machines précédentes, vous les avez bien pourries !  
 
-Vous allez réaliser **une nouvelle installation de CentOS**, configurer le minimum, et l'éteindre. **Vous ne rallumerez plus jamais cette VM**, elle ne servira qu'à être clonée. Cela accélerera grandement la mise en place de nos TPs ! (ce ne sont que des choses qu'on a déjà fait au [TP précédent](../3/README.md#i-création-et-utilisation-simples-dune-vm-centos)
+Vous allez réaliser **une nouvelle installation de CentOS**, configurer le minimum, et l'éteindre. **Vous ne rallumerez plus jamais cette VM**, elle ne servira qu'à être clonée. Cela accélerera grandement la mise en place de nos TPs ! (ce ne sont que des choses qu'on a déjà fait au [TP précédent](../3/README.md#i-création-et-utilisation-simples-dune-vm-centos))
 
-Installation et configuration de la VM "patron" : 
+**Installation et configuration de la VM "patron"** :
 * créer une VM
   * 512 Mo RAM
   * 1 CPU
@@ -148,10 +145,11 @@ client  <--net1--> router <--net2--> server
 
 **Checklist (à faire sur toutes les machines)** :
 * [X] Désactiver SELinux
+  * déja fait dans le patron
 * [X] Installation de certains paquets réseau
-* [ ] **Désactivation de la carte NAT**
-  * temporairement avec `ifdown`
-  * de façon permanente dans le fichier `ifcfg-` dédié à cette carte (en mettant `ONBOOT` à `NO`)
+  * déja fait dans le patron
+* [X] **Désactivation de la carte NAT**
+  * déja fait dans le patron
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] La connexion SSH doit être fonctionnelle
   * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
