@@ -212,15 +212,15 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
 
 1. vider la table ARP de vos machines
 2. sur `client1`
-  * afficher la table ARP
-  * expliquer la seule ligne visible
+    * afficher la table ARP
+    * expliquer la seule ligne visible
 3. sur `server1`
-  * afficher la table ARP
-  * expliquer la seule ligne visible
+    * afficher la table ARP
+    * expliquer la seule ligne visible
 4. sur `client1`
-  * ping `server1`
-  * afficher la table ARP
-  * **expliquer le changement**
+    * ping `server1`
+    * afficher la table ARP
+    * **expliquer le changement**
 5. sur `server1`
-  * afficher la table ARP
-  * **expliquer le changement**
+    * afficher la table ARP
+    * **expliquer le changement**
