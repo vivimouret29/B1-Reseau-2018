@@ -101,11 +101,13 @@ sudo yum install -y epel-release
 # Installation de plusieurs paquets réseau dont on se sert souvent
 sudo yum install -y traceroute bind-utils tcpdump nc
 
+# Désactivation de la carte NAT au reboot
+sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+# mettre ONBOOT à NO
+
 # Eteindre la machine
 sudo shutdown now
 ```
-
-
 
 # I. Mise en place du lab
 
@@ -424,7 +426,7 @@ Pour tester si c'est ok :
 **Tout se passe sur `client1` uniquement ici !**
 
 
-## Annexe 1 : Instllation d'un client graphique
+## Annexe 1 : Installation d'un client graphique
 
 Idem, bête et méchant, vous jouerez avec les interfaces graphiques Linux plus tard. (pour info on va installer l'interface [xfce](https://www.xfce.org/) réputée pour être légère)
 
