@@ -13,7 +13,7 @@
 * Utilisation de CentOS
   * installation simple
   * utilisation CLI simple
-    * `man, ``cd`, `ls`, `nano`, `cat`
+    * `man`, `cd`, `ls`, `nano`, `cat`
   * configuration réseau (voir la fiche de [procédures](../../cours/procedures.md))
     * configuration d'interface
     * gestion simplifié de nom de domaine
