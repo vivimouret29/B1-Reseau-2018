@@ -67,7 +67,7 @@ Ha et **c'est un TP solo** ! Vous pouvez vous aider (aidez-vous, vous êtes beau
 # Préparation d'une VM "patron"
 Bon c'est rigolo d'installer CentOS, mais c'est vite chiant. Nos hyperviseurs permettent de cloner des machines. Sauf que vos machines précédentes, vous les avez bien pourries !  
 
-Vous allez réaliser **une nouvelle installation de CentOS**, configurer le minimum, et l'éteindre. **Vous ne rallumerez plus jamais cette VM**, elle ne servira qu'à être clonée. Cela accélerera grandement la mise en place de nos TPs !
+Vous allez réaliser **une nouvelle installation de CentOS**, configurer le minimum, et l'éteindre. **Vous ne rallumerez plus jamais cette VM**, elle ne servira qu'à être clonée. Cela accélerera grandement la mise en place de nos TPs ! (ce ne sont que des choses qu'on a déjà fait au [TP précédent](../3/README.md#i-création-et-utilisation-simples-dune-vm-centos)
 
 Installation et configuration de la VM "patron" : 
 * créer une VM
@@ -79,16 +79,7 @@ Installation et configuration de la VM "patron" :
     * disque de 8Go
     * `.iso` de CentOS 7
 * installation
-  * config avant install 
-    * langue : anglais
-    * clavier : français
-    * timezone > Paris, France
-    * réseau > activer la carte réseau
-    * stockage > cliquer > laisser tout par défaut (ne rien faire) > valider
-  * **Commencer l'installation**
-    * **utilisez des mots de passe simples**, ce n'est qu'un petit lab avec des VMs en local
-    * utilisateur > définir nom et mot de passe > cocher "Faire de cet utilisateur un administrateur"
-    * root > définir un mot de passe root
+  * se référer au [TP précédent](../3/README.md#i-création-et-utilisation-simples-dune-vm-centos) (n'hésitez pas à m'appeler en cas de doute)
 * wait for installation process to finish
 * redémarrer la VM
   * vous pouvez enlever le `.iso` du lecteur CD si ce n'est pas fait automatiquement :)
@@ -123,7 +114,7 @@ Le "lab", c'est juste l'environnement nécessaire à notre TP. Vous allez créer
 
 ## 1. Création des réseaux
 
-On va créer de nouveaux réseaux host-only. Pour rappel, la création d'un réseau host-only **ajoute une carte réseau sur votre PC**. Vous pouvez la voir avec un `ipconfig` bien sûr ! 
+On va créer de nouveaux réseaux host-only. Pour rappel, la création d'un réseau host-only **ajoute une [carte réseau](../../cours/lexique.md#carte-réseau-ou-interface-réseau) sur votre PC**. Vous pouvez la voir avec un `ipconfig` bien sûr ! 
 
 Créez les réseaux suivants :
 * le "réseau 1" ou `net1` : `10.1.0.0/24`
@@ -135,18 +126,17 @@ Créez les réseaux suivants :
 
 ## 2. Création des VMs
 
-
 Créez les VMs suivantes (= clonez votre VM patron !) :
-* VM cliente ou `client1.tp4`
+* **VM cliente** ou `client1.tp4`
   * elle a une carte réseau dans `net1` qui porte l'IP `10.1.0.10`
-  * elle nous servira... de client !
-* VM serveur ou `server1.tp4`
+  * elle nous servira... de [client](../../cours/3.md#clientserveur) !
+* **VM serveur** ou `server1.tp4`
   * elle a une carte réseau dans `net2` qui porte l'IP `10.2.0.10`
-  * elle nous servira de serveur :|
-* VM routeur ou `router1.tp4`
+  * elle nous servira de [serveur](../../cours/3.md#clientserveur) :|
+* **VM routeur** ou `router1.tp4`
   * elle a une carte réseau dans `net1` qui porte l'IP `10.1.0.254`
   * et une carte réseau dans `net2` qui porte l'IP `10.2.0.254`
-  * cette machine sera notre routeur. Ce sera la passerelle de `client1` et `server1`
+  * cette machine sera notre [routeur](../../cours/lexique.md#routeur). Ce sera la [passerelle](../../cours/lexique.md#passerelle-ou-gateway) de `client1` et `server1`
 
 Je pense que vous avez compris le principe. Au cas où, je vous fais un schéma moche !
 ```
@@ -160,16 +150,16 @@ client  <--net1--> router <--net2--> server
 * [X] Installation de certains paquets réseau
 * [ ] **Désactivation de la carte NAT**
   * temporairement avec `ifdown`
-  * de façon permanente dans le fichier `ifcfg-` dédié à cette carte
+  * de façon permanente dans le fichier `ifcfg-` dédié à cette carte (en mettant `ONBOOT` à `NO`)
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] La connexion SSH doit être fonctionnelle
-  * vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
+  * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 * [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
 * [ ] `client2` ping `router1.tp4` sur l'IP `10.2.0.254`
 
-**NB** : pour tester si vos changements sont permanents, vous pouvez essayer de reboot. Je vous conseille de le faire si vous comptez bosser sur plusieurs jours. 
+> Pour tester si vos changements sont permanents, vous pouvez essayer de reboot. Je vous conseille de le faire si vous comptez bosser sur plusieurs jours. 
 
 ---
 
@@ -185,9 +175,9 @@ Machine | `net1` | `net2`
 
 ## 3. Mise en place du routage statique
 
-**Rappel : SELinux doit être désactivé**  
+**Rappel : SELinux doit être désactivé** (fait dans le patron de VM normalement)
 
-**Rappel : Votre carte NAT doit être désactivée**
+**Rappel : Votre carte NAT doit être désactivée** (fait dans le patron de VM normalement)
 
 On va faire en sorte que notre `client1` puisse joindre `server1`, et vice-versa. Ceci, comme au [TP 3](../3/README.md), avec du routage statique.  
 
@@ -204,9 +194,11 @@ Pour ce faire :
 
 2. **sur `client1`** :
     * faire en sorte que la machine ait une route vers `net1` et `net2`
+    * laisser le firewall activé
 
 3. **sur `server1`** :
     * faire en sorte que la machine ait une route vers `net1` et `net2`
+    * laisser le firewall activé
 
 4. **test**
     * `client1` doit pouvoir ping `server1`
@@ -228,7 +220,7 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
 
 > **Il est inutile de juste dérouler le truc, inutile** ***d'apprendre***. **Essayez de bien** ***comprendre*** **et ça deviendra parfaitement naturel.**
 
-### A. Manip 1
+### **A. Manip 1**
 
 1. vider la table ARP de **toutes** vos machines
 2. sur `client1`
@@ -245,7 +237,7 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
     * afficher la table ARP
     * **expliquer le changement**
 
-### B. Manip 2
+### **B. Manip 2**
 1. vider la table ARP de **toutes** vos machines
 2. sur `router1`
     * afficher la table ARP
@@ -256,25 +248,25 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
     * afficher la table ARP
     * **expliquer le changement**
 
-### C. Manip 3
+### **C. Manip 3**
 1. vider la table ARP de **toutes** vos machines
 2. sur l'hôte (votre PC)
-  * afficher la table ARP
-  * vider la table ARP 
-  * afficher de nouveau la table ARP
-  * attendre un peu
-  * afficher encore la table ARP
-  * **expliquer le changement**
+    * afficher la table ARP
+    * vider la table ARP 
+    * afficher de nouveau la table ARP
+    * attendre un peu
+    * afficher encore la table ARP
+    * **expliquer le changement** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway)
 
-### D. Manip 4
+### **D. Manip 4**
 1. vider la table ARP de **toutes** vos machines
 2. sur `client1`
-  * afficher la table ARP
-  * activer la carte NAT
-  * joindre internet (`curl google.com` par exemple)
-  * afficher la table ARP
-  * **expliquer le changement**
-    * expliquer qui porte l'IP qui vient de pop
+    * afficher la table ARP
+    * activer la carte NAT
+    * joindre internet (`curl google.com` par exemple)
+    * afficher la table ARP
+    * **expliquer le changement**
+      * expliquer qui porte l'IP qui vient de pop
 
 > **Je vous conseille très fortement de reprendre le tableau avec les IP plus haut et d'y ajouter les adresses MAC de chacune des interfaces pour la suite.**
 
@@ -353,6 +345,11 @@ On va `ping server1` depuis `client1` et observer à la fois les messages ARP et
     * **Important**
       * notez que ARP **n'est pas** encapsulé dans IP, c'est un paquet ARP dans une trame ethernet
       * notez que ICMP est encapsulé dans IP, c'est un datagramme ICMP, dans un paquet IP, dans une trame Ethernet !
+      * **NOTEZ BIEN "QUI DISCUTE AVEC QUI" REELLEMENT** : au niveau des MAC
+        * vous devriez en déduire qu'il vous manque la moitié des trames concernant cette communication
+        * expliquez pourquoi 
+        * **Appelez-moi pour discuter de cette question** si vous avez un doute. C'est essentiel pour bien comprendre un peu tout ce qu'il se passe !
+
 
 ## B. Interception d'une communication `netcat`
 
