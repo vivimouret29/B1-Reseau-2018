@@ -113,3 +113,19 @@ Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
 * `firewall-cmd --remove-port=80/tcp --permanent` pour supprimer une règle qui autorisait les connexions sur le port TCP 80 
 * `firewall-cmd --reload` permet aux modifications effectuées de prendre effet
 
+### Gérer sa table ARP
+
+On utilise encore la commande `ip` pour ça. Pour la table ARP, c'est le mot-clé `neighbour` (on peut l'abréger `neigh`) :
+* voir sa table ARP 
+  * `ip neigh show`
+  * pour une interface spécifique : `ip neigh show dev enp0s8`
+* voir la ligne correspondant à une IP spécifique :
+  * `ip neigh show 10.0.1.1`
+* ajouter une ligne permanente
+  * `sudo ip neigh add 10.0.1.10 lladdr de:4d:b3:3f:de:4d dev enp0s8 nud permanent`
+* changer une ligne
+  * `sudo ip neigh change 10.0.1.10 lladdr aa:bb:cc:dd:ee:ff dev enp0s8`
+* supprimer une ligne
+  * `sudo ip neigh del 10.0.1.10 lladdr aa:bb:cc:dd:ee:ff dev enp0s8 nud permanent`
+* vider la table ARP
+  * `sudo ip neigh flush all`
