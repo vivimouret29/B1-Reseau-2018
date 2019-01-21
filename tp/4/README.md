@@ -136,11 +136,14 @@ client  <--net1--> router <--net2--> server
 ```
 
 Checklist (à faire sur toutes les machines) :
+* [X] Désactiver SELinux
+* [X] Installation de certains paquets réseau
+* [ ] **Désactivation de la carte NAT**
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
-* `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
-* `client2` ping `router1.tp4` sur l'IP `10.2.0.254`
+* [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
+* [ ] `client2` ping `router1.tp4` sur l'IP `10.2.0.254`
 
 ---
 
