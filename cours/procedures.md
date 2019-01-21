@@ -64,9 +64,12 @@ sudo ifup <INTERFACE_NAME>
     * contiennent la même ligne que `ip route add` : 
 ```
 192.168.102.0/24 via 192.168.112.2 dev eth0
-192.168.112.0/24 via 192.168.112.2 dev eth0```
+192.168.112.0/24 via 192.168.112.2 dev eth0
 ```
 
+* **pour vérifier**
+  * `ip route show`
+  
 ---
 
 ### Changer son nom de domaine

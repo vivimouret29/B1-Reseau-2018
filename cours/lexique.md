@@ -274,6 +274,8 @@ ip a
   * `-4` pour les connexions IPv4
   * `-n` pour ne pas transformer le numéro de ports en nom de service
   * `-p` pour voir l'application (le processus) qui est attaché à un port
+* exemple :
+  * `ss -l -t -4`
 
 ### `nslookup` ou `dig`
 * outils permettant d'effectuer des opérations liées au protocole DNS
@@ -295,3 +297,5 @@ ip a
 * permet d'afficher les machines intermédiaires pour aller à une destination
 * `traceroute` a plusieurs méthodes de fonctionnement
   * la plus classique est d'envoyer plusieurs `ping`
+* exemple : 
+  * `traceroute <IP>`
