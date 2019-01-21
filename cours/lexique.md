@@ -290,3 +290,8 @@ ip a
 * souvent, pour imiter un simple `wget`, vous pouvez faire `curl -SLO`
 * exemple : 
   * `curl -L www.google.com` permet de récupérer le contenu du serveur web de  `www.google.com`
+  
+### `traceroute`
+* permet d'afficher les machines intermédiaires pour aller à une destination
+* `traceroute` a plusieurs méthodes de fonctionnement
+  * la plus classique est d'envoyer plusieurs `ping`
