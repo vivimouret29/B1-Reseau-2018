@@ -365,6 +365,14 @@ Envoyez le fichier `netcat_ok.pcap` sur votre hôte, puis ouvrez le avec Wiresha
   * le client répond `ACK` : "ok frer, on est bien connectés, on peut échanger de la donnée maintenant !"
 * vos messages qui circulent
 
+**HEY j'ai une idée** :
+* fermer le port firewall du `server1`
+* refaire la même chose 
+  * se faire jeter la connexion parce que le port est fermé
+  * intercepter le trafic dans un fichier `netcat_ko.pcap`
+* exporter le fichier sur l'hôte
+  * mettre en évidence les lignes qui correspondent au firewall qui dit "nop frer"
+
 ## C. Interception d'un trafic HTTP
 
 Ca va être la même chose, mais on va intercepter du trafic HTTP. Du trafic web quoi ! De l'HTML qui transite sur le réseau toussa toussa.
@@ -376,7 +384,7 @@ Pour que ça se fasse dans de bonnes conditions, je vous propose :
     * c'est juste une application, qui écoute derrière le port d'une IP !
     * si on lui parle en HTTP, elle répond en HTTP
     * avec firefox ou `curl`
-* et on va installer une interface graphique sur `client1`
+* et on va installer une interface graphique sur `client1` (facultatif)
   * ouais parce qu'il n'y a aucun problème pour avoir une interface graphique avec CentOS en fait !
   * ça simulera un peu mieux un "client" comme vous les connaissez
   * idem, ce sera guidé, y'aura juste à reboot la VM et paf une interface graphique
@@ -415,6 +423,7 @@ sudo ifdown enp0s3
 
 Pour tester si c'est ok :
 * sur `server1`
+  * `sudo systemctl status nginx`
   * `curl localhost:80`
 * sur `router1`
   * `curl` vers l'IP de `server1`
@@ -424,6 +433,29 @@ Pour tester si c'est ok :
 ### Install et config du client web
 
 **Tout se passe sur `client1` uniquement ici !**
+
+* si vous voulez vous pouvez [installer une interface graphique sur la VM](#annexe-1--installation-dun-client-graphique) `client1`. CentOS supporte ça sans problème
+  * ce sera (très) long à l'école, alors c'est pas obligatoire
+
+* sinon, `client1` peut utiliser la commande `curl`, c'est pareil !
+
+### Interception du trafic
+1. sur `server1`
+    * s'assurer que le serveur web est fonctionnel
+    * vider la table ARP
+2. sur `client1`
+    * vider la table ARP
+3. sur `router1`
+    * vider la table ARP
+    * lancer la capture (fichier `http.pcap`)
+4. sur `client1`
+    * effectuer une connexion au serveur web à l'aide de votre client web
+5. sur l'hôte (votre PC) 
+    * analyser la capture :
+      * repérez les messages ARP
+      * repérez le trafic HTTP et le contenu HTML de la page demandée
+      * analyser les lignes une à une
+      * dans quels types de trames circulent le trafic HTTP ? Détaillez un peu ! 
 
 
 ## Annexe 1 : Installation d'un client graphique
