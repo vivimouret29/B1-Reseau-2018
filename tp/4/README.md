@@ -196,4 +196,31 @@ Pour ce faire :
   * effectuez un [`traceroute`](../../cours/lexique.md#traceroute) depuis le client pour voir le chemin pris par votre message
 
 
-  
+# II. Spéléologie réseau
+
+**Rappel : SELinux doit être désactivé**  
+
+**Rappel : Votre carte NAT doit être désactivée**
+
+## 1. ARP
+
+ARP est le protocole qui permet de connaître la MAC d'une machine quand on connaît son IP.  
+
+Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça se passe](../../cours/procedures.md#gérer-sa-table-arp). 
+
+### A. Manip 1
+
+1. vider la table ARP de vos machines
+2. sur `client1`
+  * afficher la table ARP
+  * expliquer la seule ligne visible
+3. sur `server1`
+  * afficher la table ARP
+  * expliquer la seule ligne visible
+4. sur `client1`
+  * ping `server1`
+  * afficher la table ARP
+  * **expliquer le changement**
+5. sur `server1`
+  * afficher la table ARP
+  * **expliquer le changement**
