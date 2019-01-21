@@ -150,6 +150,7 @@ client  <--net1--> router <--net2--> server
 ---
 
 Petit tableau récapitulatif :  
+
 Machine | `net1` | `net2`
 --- | --- | ---
 `client1.tp4` | `10.1.0.10` | X
