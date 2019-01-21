@@ -5,6 +5,7 @@
 * Manipulations IP et masque (avec le [binaire](../../cours/lexique.md#binaire))
 * Adressage d'IP statique et dynamique sur vos OS
 * Firewall (bref)
+* Routage statique
 * Ligne de commande
   * navigation de dossier
   * `ipconfig` ou `ifconfig` suivant l'OS
