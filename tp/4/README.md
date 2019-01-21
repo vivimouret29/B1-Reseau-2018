@@ -175,25 +175,25 @@ On va faire en sorte que notre `client1` puisse joindre `server1`, et vice-versa
 
 Pour ce faire : 
 1. **sur `router1`** : 
-  * activer l'IPv4 Forwarding (= transformer la machine en routeur)
-    * `sudo sysctl -w net.ipv4.conf.all.forwarding=1`
-  * désactiver le firewall (pour éviter certaines actions non voulues)
-    * `sudo systemctl stop firewalld` (temporaire)
-    * `sudo systemctl disable firewalld` (permanent)
-  * vérifier qu'il a déjà des routes pour aller vers `net1` et `net2`
-    * bah oui : il y est directement connecté !
-    * `ip route show`
+    * activer l'IPv4 Forwarding (= transformer la machine en routeur)
+      * `sudo sysctl -w net.ipv4.conf.all.forwarding=1`
+    * désactiver le firewall (pour éviter certaines actions non voulues)
+      * `sudo systemctl stop firewalld` (temporaire)
+      * `sudo systemctl disable firewalld` (permanent)
+    * vérifier qu'il a déjà des routes pour aller vers `net1` et `net2`
+      * bah oui : il y est directement connecté !
+      * `ip route show`
 
 2. **sur `client1`** :
-  * faire en sorte que la machine ait une route vers `net1` et `net2`
+    * faire en sorte que la machine ait une route vers `net1` et `net2`
 
 3. **sur `server1`** :
-  * faire en sorte que la machine ait une route vers `net1` et `net2`
+    * faire en sorte que la machine ait une route vers `net1` et `net2`
 
 4. **test**
-  * `client1` doit pouvoir ping `server1`
-  * `server1` doit pouvoir ping `client1`
-  * effectuez un [`traceroute`](../../cours/lexique.md#traceroute) depuis le client pour voir le chemin pris par votre message
+    * `client1` doit pouvoir ping `server1`
+    * `server1` doit pouvoir ping `client1`
+    * effectuez un [`traceroute`](../../cours/lexique.md#traceroute) depuis le client pour voir le chemin pris par votre message
 
 
 # II. Spéléologie réseau
