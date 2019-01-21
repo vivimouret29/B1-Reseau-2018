@@ -135,7 +135,9 @@ Je pense que vous avez compris le principe. Au cas où, je vous fais un schéma 
 client  <--net1--> router <--net2--> server
 ```
 
-Checklist (à faire sur toutes les machines) :
+---
+
+**Checklist (à faire sur toutes les machines)** :
 * [X] Désactiver SELinux
 * [X] Installation de certains paquets réseau
 * [ ] **Désactivation de la carte NAT**
