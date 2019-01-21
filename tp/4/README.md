@@ -12,8 +12,12 @@
   * `netcat` ou `nc` suivant l'OS
 * Utilisation de CentOS
   * installation simple
+  * utilisation CLI simple
+    * `man, ``cd`, `ls`, `nano`, `cat`
   * configuration réseau (voir la fiche de [procédures](../../cours/procedures.md))
     * configuration d'interface
+    * gestion simplifié de nom de domaine
+      * hostname, FQDN, fichier `/etc/hosts`
     * configuration firewall
     * configuration routage statique
 
@@ -141,6 +145,8 @@ client  <--net1--> router <--net2--> server
 * [X] Désactiver SELinux
 * [X] Installation de certains paquets réseau
 * [ ] **Désactivation de la carte NAT**
+  * temporairement avec `ifdown`
+  * de façon permanente dans le fichier `ifcfg-` dédié à cette carte
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
@@ -149,7 +155,7 @@ client  <--net1--> router <--net2--> server
 
 ---
 
-Petit tableau récapitulatif :  
+**Petit tableau récapitulatif** :
 
 Machine | `net1` | `net2`
 --- | --- | ---
@@ -158,3 +164,36 @@ Machine | `net1` | `net2`
 `server1.tp4` | X | `10.2.0.10` 
 
 **IMPORTANT** : habituez-vous à faire ce genre de tableau, c'est une méthode qui vous fera gagner énormément de temps. Pensez à quand vous aurez ~10 machines avec des IPs différentes. Je les ferai pas toujours à votre place ;)
+
+## 3. Mise en place du routage statique
+
+**Rappel : SELinux doit être désactivé**  
+
+**Rappel : Votre carte NAT doit être désactivée**
+
+On va faire en sorte que notre `client1` puisse joindre `server1`, et vice-versa. Ceci, comme au [TP 3](../3/README.md), avec du routage statique.  
+
+Pour ce faire : 
+1. **sur `router1`** : 
+  * activer l'IPv4 Forwarding (= transformer la machine en routeur)
+    * `sudo sysctl -w net.ipv4.conf.all.forwarding=1`
+  * désactiver le firewall (pour éviter certaines actions non voulues)
+    * `sudo systemctl stop firewalld` (temporaire)
+    * `sudo systemctl disable firewalld` (permanent)
+  * vérifier qu'il a déjà des routes pour aller vers `net1` et `net2`
+    * bah oui : il y est directement connecté !
+    * `ip route show`
+
+2. **sur `client1`** :
+  * faire en sorte que la machine ait une route vers `net1` et `net2`
+
+3. **sur `server1`** :
+  * faire en sorte que la machine ait une route vers `net1` et `net2`
+
+4. **test**
+  * `client1` doit pouvoir ping `server1`
+  * `server1` doit pouvoir ping `client1`
+  * effectuez un [`traceroute`](../../cours/lexique.md#traceroute) depuis le client pour voir le chemin pris par votre message
+
+
+  
