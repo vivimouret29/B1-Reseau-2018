@@ -53,10 +53,18 @@ Ha et **c'est un TP solo** ! Vous pouvez vous aider (aidez-vous, vous êtes beau
 * **utilisez SSH dès que possible**
 
 # Sommaire
+* [Préparation d'une VM "patron"](#0-préparation-dune-vm-patron)
+* I. [Mise en place du lab](#i-mise-en-place-du-lab)
+* II. [Spéléologie Réseau](#ii-spéléologie-réseau)
+  * 1. [ARP](#1-arp)
+  * 2. [Interception de trafic avec Wireshark](#2-wireshark)
+    * [ARP et `ping`](#a-interception-darp-et-ping)
+    * [netcat](#b-interception-dune-communication-netcat)
+    * [Trafic Web (HTTP)](#c-interception-dun-trafic-http)
+* [Annexe 1 : Installation d'une interface graphique sur CentOS 7](#annexe-1--installation-dun-client-graphique)
 
-  
----
-# 0. Préparation d'une VM "patron"
+--- 
+# Préparation d'une VM "patron"
 Bon c'est rigolo d'installer CentOS, mais c'est vite chiant. Nos hyperviseurs permettent de cloner des machines. Sauf que vos machines précédentes, vous les avez bien pourries !  
 
 Vous allez réaliser **une nouvelle installation de CentOS**, configurer le minimum, et l'éteindre. **Vous ne rallumerez plus jamais cette VM**, elle ne servira qu'à être clonée. Cela accélerera grandement la mise en place de nos TPs !
