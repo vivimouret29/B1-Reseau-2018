@@ -51,8 +51,8 @@ sudo ifup <INTERFACE_NAME>
 ### Ajouter une route statique
 
 * **temporairement**
-  * `ip route add <NETWORK_ADDRESS> via <LOCAL_IP> dev <LOCAL_INTERFACE_NAME>`
-  * par exemple `ip route add 192.168.102.0/24 via 192.168.112.2 dev eth0`
+  * `sudo ip route add <NETWORK_ADDRESS> via <LOCAL_IP> dev <LOCAL_INTERFACE_NAME>`
+  * par exemple `sudo ip route add 192.168.102.0/24 via 192.168.112.2 dev eth0`
   * ce changement sera effacé après `reboot` ou `systemctl restart network`
 
 * **définitivement**
@@ -112,10 +112,10 @@ ping monpc.chezmoi
 
 CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh` justement.  
 Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
-* `firewall-cmd --list-all` pour lister toutes les règles
-* `firewall-cmd --add-port=80/tcp --permanent` pour autoriser les connexions sur le port TCP 80 
-* `firewall-cmd --remove-port=80/tcp --permanent` pour supprimer une règle qui autorisait les connexions sur le port TCP 80 
-* `firewall-cmd --reload` permet aux modifications effectuées de prendre effet
+* `sudo firewall-cmd --list-all` pour lister toutes les règles
+* `sudo firewall-cmd --add-port=80/tcp --permanent` pour autoriser les connexions sur le port TCP 80 
+* `sudo firewall-cmd --remove-port=80/tcp --permanent` pour supprimer une règle qui autorisait les connexions sur le port TCP 80 
+* `sudo firewall-cmd --reload` permet aux modifications effectuées de prendre effet
 
 ### Gérer sa table ARP
 
