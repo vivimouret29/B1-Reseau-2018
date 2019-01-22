@@ -246,12 +246,12 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
 1. vider la table ARP de **toutes** vos machines
 2. sur `router1`
     * afficher la table ARP
-    * **expliquer les lignes**
+    * **expliquer le(s) ligne(s)**
 3. sur `client1`
     * ping `server1`
 2. sur `router1`
     * afficher la table ARP
-    * **expliquer le changement**
+    * **expliquer le(s) changement(s)**
 
 ### **C. Manip 3**
 1. vider la table ARP de **toutes** vos machines
@@ -261,7 +261,7 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
     * afficher de nouveau la table ARP
     * attendre un peu
     * afficher encore la table ARP
-    * **expliquer le changement** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway)
+    * **expliquer le(s) changement(s)** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway)
 
 ### **D. Manip 4**
 1. vider la table ARP de **toutes** vos machines
@@ -270,8 +270,8 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
     * activer la carte NAT
     * joindre internet (`curl google.com` par exemple)
     * afficher la table ARP
-    * **expliquer le changement**
-      * expliquer qui porte l'IP qui vient de pop
+    * **expliquer le(s) changement(s)**
+      * expliquer quelle machine porte l'IP qui vient de pop dans cette table ARP
 
 > **Je vous conseille très fortement de reprendre le tableau avec les IP plus haut et d'y ajouter les adresses MAC de chacune des interfaces pour la suite.**
 
