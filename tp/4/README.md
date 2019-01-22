@@ -162,7 +162,7 @@ client  <--net1--> router <--net2--> server
 * [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 * [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
-* [ ] `client2` ping `router1.tp4` sur l'IP `10.2.0.254`
+* [ ] `server1` ping `router1.tp4` sur l'IP `10.2.0.254`
 
 > Pour tester si vos changements sont permanents, vous pouvez essayer de reboot. Je vous conseille de le faire si vous comptez bosser sur plusieurs jours. 
 
