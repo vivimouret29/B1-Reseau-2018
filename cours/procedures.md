@@ -30,6 +30,7 @@ ip a
 * il porte le nom `ifcfg-<NOM_DE_L'INTERFACE>`
 * on peut le créer s'il n'existe pas
 * exemple de fichier minimaliste qui assigne `192.168.1.19/24` à l'interface `enp0s8`
+  * c'est donc le fichier `/etc/sysconfig/network-scripts/ifcfg-enp0s8`
 ```
 NAME=enp0s8
 DEVICE=enp0s8
