@@ -125,7 +125,7 @@ Créez les réseaux suivants :
 ## 2. Création des VMs
 
 **NB : Quand vous clonez, Virtualbox va vous poser des questions :**
-* **clone lié**
+* **clone intégral**
 * **réinitialisation des adresses MAC : OUI**
 
 Créez les VMs suivantes (= clonez votre VM patron !) :
