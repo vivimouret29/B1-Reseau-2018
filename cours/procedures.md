@@ -111,7 +111,7 @@ ping monpc.chezmoi
 
 ### Interagir avec le firewall
 
-CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh` justement.  
+CentOS 7 est aussi équipé d'un pare-feu. Par défaut, il bloque tout, à part quelques services comme `ssh`.  
 Pour manipuler le firewall de CentOS 7, on utilise la commande `firewall-cmd` :
 * `sudo firewall-cmd --list-all` pour lister toutes les règles
 * `sudo firewall-cmd --add-port=80/tcp --permanent` pour autoriser les connexions sur le port TCP 80 
