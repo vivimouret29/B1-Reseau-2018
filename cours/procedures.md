@@ -51,7 +51,7 @@ sudo ifup <INTERFACE_NAME>
 ### Ajouter une route statique
 
 * **temporairement**
-  * `ip route add <NETWORK_ADDRESS> via <LOCAL_IP> dev <LOCAL_INTERFACE_NAME>
+  * `ip route add <NETWORK_ADDRESS> via <LOCAL_IP> dev <LOCAL_INTERFACE_NAME>`
   * par exemple `ip route add 192.168.102.0/24 via 192.168.112.2 dev eth0`
   * ce changement sera effacé après `reboot` ou `systemctl restart network`
 
