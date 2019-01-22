@@ -317,8 +317,12 @@ Pour que vos hôtes (vos PCs) puissent agir comme des routeurs, il va falloir fa
     * `Appliquer`
     * `Démarrer`
 
-#### MacOS ou GNU/Linux
-* `sysctl -w net.ipv4.conf.all.forwarding=1`
+#### GNU/Linux
+* `sudo sysctl -w net.ipv4.conf.all.forwarding=1`
+
+#### MacOS
+* `sudo sysctl -w net.inet.ip.forwarding=1`
+
 
 ## 2. Configuration du routage
 Vous avez 3 réseaux : 
