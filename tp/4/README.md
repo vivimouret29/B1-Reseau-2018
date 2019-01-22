@@ -96,7 +96,7 @@ sudo yum update -y
 sudo yum install -y epel-release
 
 # Installation de plusieurs paquets réseau dont on se sert souvent
-sudo yum install -y traceroute bind-utils tcpdump nc
+sudo yum install -y traceroute bind-utils tcpdump nc nano
 
 # Désactivation de la carte NAT au reboot
 sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
