@@ -128,16 +128,16 @@ Créez les réseaux **host-only** suivants :
 * **clone intégral**
 * **réinitialisation des adresses MAC : OUI**
 
-**NB2 : PAS DE NAT DANS LES CLONES (ou alors vous la désactivez)**. Une interface de type NAT dans VirtualBox sert à accéder à internet. On a pas besoin (vous avez déjà fait les `yum install` dans le patron).
+**NB2 : PAS DE NAT DANS LES CLONES (ou alors vous la désactivez)**. Une interface de type NAT dans VirtualBox sert à accéder à internet. On en a **PAS** besoin (vous avez déjà fait les `yum install` dans le patron).
 
 Créez les VMs suivantes (= clonez votre VM patron !) :
-* **VM cliente** ou `client1.tp4`
+* **VM cliente** ou [`client1.tp4`](../../cours/procedures.md##changer-son-nom-de-domaine)
   * elle a une carte réseau dans `net1` (host-only) qui porte l'IP `10.1.0.10`
   * elle nous servira... de [client](../../cours/3.md#clientserveur) !
-* **VM serveur** ou `server1.tp4`
+* **VM serveur** ou [`server1.tp4`](../../cours/procedures.md##changer-son-nom-de-domaine)
   * elle a une carte réseau dans `net2` (host-only) qui porte l'IP `10.2.0.10`
   * elle nous servira de [serveur](../../cours/3.md#clientserveur) :|
-* **VM routeur** ou `router1.tp4`
+* **VM routeur** ou [`router1.tp4`](../../cours/procedures.md##changer-son-nom-de-domaine)
   * elle a une carte réseau dans `net1` (host-only) qui porte l'IP `10.1.0.254`
   * et une carte réseau dans `net2` (host-only) qui porte l'IP `10.2.0.254`
   * cette machine sera notre [routeur](../../cours/lexique.md#routeur). Ce sera la [passerelle](../../cours/lexique.md#passerelle-ou-gateway) de `client1` et `server1`
