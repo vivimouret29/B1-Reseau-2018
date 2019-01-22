@@ -83,8 +83,8 @@ sudo hostname <NEW_HOSTNAME>
 sudo hostname vm1.tp3.b1
 ```
 **2. Définir un FQDN quand la machine s'allume** (permanent)
-* écriture du FQDN dans le fichier `/etc/hostname`
-* en une seule commande `echo 'vm1.tp1.b3' > /etc/hostname`
+* écriture du FQDN dans le fichier (avec `nano`) : `sudo nano etc/hostname`
+* **OU** en une seule commande `echo 'vm1.tp1.b3' | sudo tee /etc/hostname`
 
 **3. Pour consulter votre FQDN actuel**
 ```
