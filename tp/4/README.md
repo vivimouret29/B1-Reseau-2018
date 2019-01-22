@@ -74,8 +74,8 @@ Vous allez réaliser **une nouvelle installation de CentOS**, configurer le mini
   * Réseau
     * une carte NAT
   * Stockage
-    * disque de 8Go
-    * `.iso` de CentOS 7
+    * disque de 8Go 
+    * `.iso` de CentOS 7 (sur le "contrôleur IDE")
 * installation
   * se référer au [TP précédent](../3/README.md#i-création-et-utilisation-simples-dune-vm-centos) (n'hésitez pas à m'appeler en cas de doute)
 * wait for installation process to finish
@@ -123,6 +123,10 @@ Créez les réseaux suivants :
   * **PAS** de DHCP
 
 ## 2. Création des VMs
+
+**NB : Quand vous clonez, Virtualbox va vous poser des questions :**
+* **clone lié**
+* **réinitialisation des adresses MAC : OUI**
 
 Créez les VMs suivantes (= clonez votre VM patron !) :
 * **VM cliente** ou `client1.tp4`
