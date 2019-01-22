@@ -86,7 +86,7 @@ Vous allez réaliser **une nouvelle installation de CentOS**, configurer le mini
   * exécutez :
 ```bash
 # Désactivation de SELinux
-sudo setenforce # temporaire
+sudo setenforce 0 # temporaire
 sudo sed -i 's/enforcing/permissive/g' /etc/selinux/config # permanent
 
 # Mise à jour des dépôts
