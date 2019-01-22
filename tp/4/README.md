@@ -196,11 +196,11 @@ Pour ce faire :
       * `ip route show`
 
 2. **sur `client1`** :
-    * faire en sorte que la machine ait une route vers `net1` et `net2`
+    * [faire en sorte que la machine ait une route](../../cours/procedures.md#ajouter-une-route-statique) vers `net1` et `net2`
     * laisser le firewall activé
 
 3. **sur `server1`** :
-    * faire en sorte que la machine ait une route vers `net1` et `net2`
+    * [faire en sorte que la machine ait une route](../../cours/procedures.md#ajouter-une-route-statique) vers `net1` et `net2`
     * laisser le firewall activé
 
 4. **test**
