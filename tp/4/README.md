@@ -159,7 +159,7 @@ client  <--net1--> router <--net2--> server
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] La connexion SSH doit être fonctionnelle
   * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
-* [ ] [Définition du nom de domaine](../../cours/procedures.md##changer-son-nom-de-domaine)
+* [ ] [Définition du nom de domaine](../../cours/procedures.md#changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 * [ ] `client1` ping `router1.tp4` sur l'IP `10.1.0.254`
 * [ ] `server1` ping `router1.tp4` sur l'IP `10.2.0.254`
@@ -261,7 +261,7 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
     * afficher de nouveau la table ARP
     * attendre un peu
     * afficher encore la table ARP
-    * **expliquer le(s) changement(s)** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway)
+    * **expliquer le(s) changement(s)** (c'est lié à votre [passerelle](../../cours/lexique.md#passerelle-ou-gateway))
 
 ### **D. Manip 4**
 1. vider la table ARP de **toutes** vos machines
@@ -324,7 +324,7 @@ On va `ping server1` depuis `client1` et observer à la fois les messages ARP et
 
 3. sur `router1`
     * quitter la capture (CTRL + C)
-    * vérifier la présenc edu fichier `ping.pcap` avec un `ls`
+    * vérifier la présence du fichier `ping.pcap` avec un `ls`
     * envoyer le fichier `ping.pcap` sur votre hôte
       * si vous savez pas comment, ou si vous voulez des conseils sur des moyens rapides et/ou secure de le faire, appelez-moi !
 
