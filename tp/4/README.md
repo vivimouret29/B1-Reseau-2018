@@ -383,7 +383,9 @@ Envoyez le fichier `netcat_ok.pcap` sur votre hôte, puis ouvrez le avec Wiresha
 * exporter le fichier sur l'hôte
   * mettre en évidence les lignes qui correspondent au firewall qui dit "nop frer"
 
-## C. Interception d'un trafic HTTP
+## C. Interception d'un trafic HTTP (BONUS)
+
+**C'est un bonus mais c'est pas grand chose à faire (genre 5 min?) si vous avez fait le reste.** Et c'est délire.
 
 Ca va être la même chose, mais on va intercepter du trafic HTTP. Du trafic web quoi ! De l'HTML qui transite sur le réseau toussa toussa.
 
