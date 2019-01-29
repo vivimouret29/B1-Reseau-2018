@@ -272,6 +272,7 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
     * afficher la table ARP
     * **expliquer le(s) changement(s)**
       * expliquer quelle machine porte l'IP qui vient de pop dans cette table ARP
+    * **n'oubliez pas de re-désactiver/débrancher la carte NAT**  
 
 > **Je vous conseille très fortement de reprendre le tableau avec les IP plus haut et d'y ajouter les adresses MAC de chacune des interfaces pour la suite.**
 
