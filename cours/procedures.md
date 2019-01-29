@@ -52,8 +52,8 @@ sudo ifup <INTERFACE_NAME>
 ### Ajouter une route statique
 
 * **temporairement**
-  * `sudo ip route add <NETWORK_ADDRESS> via <LOCAL_IP> dev <LOCAL_INTERFACE_NAME>`
-  * par exemple `sudo ip route add 192.168.102.0/24 via 192.168.112.2 dev eth0`
+  * `sudo ip route add <NETWORK_ADDRESS> via <IP_GATEWAY> dev <LOCAL_INTERFACE_NAME>`
+  * par exemple `sudo ip route add 10.2.0.0/24 via 10.2.0.254 dev eth0`
   * ce changement sera effacé après `reboot` ou `systemctl restart network`
 
 * **définitivement**
@@ -65,8 +65,8 @@ sudo ifup <INTERFACE_NAME>
     * par exemple `/etc/sysconfig/network-scripts/route-enp0s8`
     * contiennent la même ligne que `ip route add` : 
 ```
-192.168.102.0/24 via 192.168.112.2 dev eth0
-192.168.112.0/24 via 192.168.112.2 dev eth0
+10.2.0.0/24 via 10.2.0.254 dev eth0
+10.1.0.0/24 via 10.1.0.254 dev eth0`
 ```
 
 * **pour vérifier**
