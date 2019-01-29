@@ -22,7 +22,7 @@
 # TP 4 - Spéléologie réseau : descente dans les couches
 Gné ? "Spéléologie" ? Oui, on va descendre dans les couches du *modèle OSI* (on y reviendraaaaaa), explorer le principe d'encapsulation, et regarder un peu comment ça fonctionne **vraiment** tout ça.  
 
-**En vrai c'est le TP qui fait un peu mal aux dents, alors gardez le sourire, soyez motivées et tout ira bien.** :)  
+**En vrai c'est le TP qui fait un peu mal aux dents, alors gardez le sourire, soyez motivées les filles et tout ira bien.** :)  
 
 Ha et **c'est un TP solo** ! Vous pouvez vous aider entre vous (oui, aidez-vous, vous êtes beaux et forts), **mais un rendu/personne exigé !**
 
