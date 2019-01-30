@@ -305,14 +305,15 @@ ip a
   * exemple de scan de ping : `nmap -sP 192.168.1.0/24`
 
 ### `nc` ou `netcat`
-* outil permettant de simples connexions [TCP](#TCP) ou [UDP](#UDP)
+* outil permettant de simples connexions [TCP](#tcp--transmission-control-protocol) ou [UDP](#udp--user-datagram-protocol)
 * on a effectué des simples connexions entre vos PCs en cours
 * mais on peut aussi s'en servir pour se connecter à un serveur web, aucun problème
-  * faut savoir parler l'HTTP par contre ehe
+  * faut savoir parler l'[HTTP](#http--hypertext-transfer-protocol) par contre ehe
 
 ### `netstat` ou `ss`
 * outils permettant de lister les connexions actives d'une machine
   * entre autres, une par site web que l'on visite par exemple
+  * **on l'utilise beaucoup pour lister les [ports](#ports) ouverts par une machine**
 * options communes de `ss`
   * `-l` pour les ports en écoute (`-l` comme *listen*)
   * `-t` pour les ports TCP
