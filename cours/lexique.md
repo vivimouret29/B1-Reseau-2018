@@ -325,13 +325,13 @@ ip a
 
 ### `nslookup` ou `dig`
 * outils permettant d'effectuer des opérations liées au protocole DNS
-* un "lookup DNS" consiste à demander quelle est l'IP d'un nom donné
-  * "à quelle IP se trouve le serveur www.google.com ?" par exemple
-* un "reverse lookup DNS" c'est l'inverse : on cherche à connaître à quel nom est associée une IP
-  * "y'a-t-il des noms associés à 76.32.43.32 ?" par exemple
+* un *lookup DNS* consiste à demander quelle est l'IP d'un nom donné
+  * "à quelle IP se trouve le serveur `www.google.com` ?" par exemple
+* un *reverse lookup DNS* c'est l'inverse : on cherche à connaître à quel nom est associée une IP
+  * "y'a-t-il des [noms de domaines](./4.md#noms-de-domaine) associés à `76.32.43.32` ?" par exemple
 
 ### `curl` et `wget`
-* permettent de faire des requêtes HTTP
+* permettent de faire des requêtes [HTTP](#http--hypertext-transfer-protocol)
 * tout ce que fait `wget`, `curl` sait le faire. La réciproque n'est pas vraie.
 * `wget` c'est l'outil simple mais peu puissant et très peu flexible
 * `curl`, c'est l'inverse
