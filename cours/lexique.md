@@ -1,15 +1,62 @@
 # Lexique
 
-* [Sigles et Acronymes](#siglesacronymes)
-  * une section "protocoles" verra le jour quand on y verra un peu plus clair :)
+* [Protocoles](#Protocoles)
+* [Autres sigles et acronymes](#siglesacronymes)
 * [Notions](#notions)
 * [Commandes](#commandes)
 
-## Sigles/Acronymes
+## Protocoles
 
-### *CIDR* : Classless Inter-Domain Routing
-* de façon simple, c'est le `/24` dans `192.168.1.1/24` par exemple
-* un `/24` veut dire "24 bits à 1" et correspond donc au masque `11111111.11111111.11111111.00000000` soit `255.255.255.0`
+### *Ethernet*
+* utilisé pour la *commutation de paquets*
+* Ethernet définit le format des trames Ethernet qui circulent sur le réseau (entre autres)
+  * [MAC](#mac--media-access-control) source d'un message
+  * [MAC](#mac--media-access-control) destination d'un message
+
+* **un câble RJ45**, c'est juste un câble qui est fait pour faire passer des trames Ethernet :)
+  * d'ailleurs on les appelle parfois "câbles Ethernet" !
+  * **donc pas besoin de plus que d'un câble pour créer un réseau**
+
+---
+
+### *ARP* : Adresse Resolution Protocol
+* c'est dans le nom : il permet de résoudre des adresses
+* plus précisément, il **permet de demander sur le réseau la MAC de quelqu'un, quand on connaît son IP**
+* pour plus de détails sur le fonctionnement d'ARP, vous pouvez vous référer [au cours sur le sujet](./5.md#arp)
+
+---
+
+### *IP* : Internet Protocol v4
+
+> on parle ici d'IPv4 (on verra peut-êtr eun peu d'IPv6 ensemble)
+
+* protocole utilisé pour discuter à travers des réseaux
+* une *adresse IP* peut être "portée" par une *carte réseau*
+* une *adresse IP* est composée de 32 bits
+  * par exemple : `192.168.1.1`
+* pour comprendre l'IP on a besoin du [masque de sous-réseau](#masque-de-sous-r%C3%A9seau) qui lui est associé
+* la décomposition d'une *adresse IP* est vue dans le [cours 1](./1.md)
+* il existe des plages réservées d'adresses IP
+  * entre autres, [les adresses privées et publiques](./3.md#ip-privéespubliques)
+
+---
+
+### *TCP* : Transmission Control Protocol
+
+* permet d'établir un tunnel entre deux personnes, généralement un client et un serveur
+* une fois le tunnel établi, le client et le serveur peuvent échanger des données
+* voyez TCP comme un échange de messages (comme des textos) **avec accusé de réception**
+* **on utilise TCP lorsqu'on veut une connexion stable, même si elle est un peu plus lente**
+* une connexion HTTP utilise un tunnel TCP par exemple
+
+### *UDP* : User Datagram Protocol
+
+* permet d'échanger des données, générélament entre un client et un serveur
+* aucun tunnel n'est établi, les données sont envoyées **sans accusé de réception**
+* **on utilise UDP lorsqu'on s'en fiche de perdre certains messages sur la route, afin d'optimiser la vitesse de transport**
+* UDP est par exemple très utilisé dans les jeux en ligne (typiquement pour des FPS en ligne)
+
+---
 
 ### *DHCP* : Dynamic Host Configuration Protocol
 * permet d'éviter aux gens de définir leur adresse IP à la main eux-mêmes
@@ -27,23 +74,28 @@
   * "donne moi l'IP associée à tel nom de domaine"
 * des outils comme [`nslookup` ou `dig`](#nslookup-ou-dig) peuvent être utilisés pour interroger des serveurs DNS à la main
 
+### *HTTP* : HyperText Transfer Protocol
+* protocole utilisé pour discuter avec des serveurs web
+
+### *SSH* : Secure SHell
+* protocole/outil utilisés pour se connecter à distance sur un équipement
+* on peut alors contrôler l'équipement en passant par le réseau
+  * l'équipement distant doit faire tourner une application : un **serveur SSH** 
+    * souvent le serveur SSH écoute sur le port TCP numéro 22
+  * votre PC doit posséder un **client SSH** :
+    * la commande `ssh` (simple, puissant, léger)
+    * ou [Putty](https://www.putty.org/) (sur Windows, quand la commande `ssh` n'est pas dispo)
+
+## Sigles/Acronymes
+
+### *CIDR* : Classless Inter-Domain Routing
+* de façon simple, c'est le `/24` dans `192.168.1.1/24` par exemple
+* un `/24` veut dire "24 bits à 1" et correspond donc au masque `11111111.11111111.11111111.00000000` soit `255.255.255.0`
+
 ### *FQDN* : Fully Qualified Domain Name
 * c'est le nom complet d'un hôte (= d'une machine) sur le réseau
 * il est la concaténation du nom d'hôte et du domaine
 * [cf. le cours 4](./4.md#noms-de-domaine)
-
-### *HTTP* : HyperText Transfer Protocol
-* protocole utilisé pour discuter avec des serveurs web
-
-### *IP* : Internet Protocol
-* protocole utilisé pour discuter à travers des réseaux
-* une *adresse IP* peut être "portée" par une *carte réseau*
-* une *adresse IP* est composée de 32 bits
-  * par exemple : `192.168.1.1`
-* pour comprendre l'IP on a besoin du [masque de sous-réseau](#masque-de-sous-r%C3%A9seau) qui lui est associé
-* la décomposition d'une *adresse IP* est vue dans le [cours 1](./1.md)
-* il existe des plages réservées d'adresses IP
-  * entre autres, [les adresses privées et publiques](./3.md#ip-privéespubliques)
 
 ### *LAN* : Local Area Network
 * réseau local
@@ -66,30 +118,6 @@
   * HTTP : [RFC 2616](https://tools.ietf.org/html/rfc2616)
   * TCP : [RFC 793](https://tools.ietf.org/html/rfc793)
   * etc.
-
-### *SSH* : Secure SHell
-* protocole/outil utilisés pour se connecter à distance sur un équipement
-* on peut alors contrôler l'équipement en passant par le réseau
-  * l'équipement distant doit faire tourner une application : un **serveur SSH** 
-    * souvent le serveur SSH écoute sur le port TCP numéro 22
-  * votre PC doit posséder un **client SSH** :
-    * la commande `ssh` (simple, puissant, léger)
-    * ou [Putty](https://www.putty.org/) (sur Windows, quand la commande `ssh` n'est pas dispo)
-
-### *TCP* : Transmission Control Protocol
-
-* permet d'établir un tunnel entre deux personnes, généralement un client et un serveur
-* une fois le tunnel établi, le client et le serveur peuvent échanger des données
-* voyez TCP comme un échange de messages (comme des textos) **avec accusé de réception**
-* **on utilise TCP lorsqu'on veut une connexion stable, même si elle est un peu plus lente**
-* une connexion HTTP utilise un tunnel TCP par exemple
-
-### *UDP* : User Datagram Protocol
-
-* permet d'échanger des données, générélament entre un client et un serveur
-* aucun tunnel n'est établi, les données sont envoyées **sans accusé de réception**
-* **on utilise UDP lorsqu'on s'en fiche de perdre certains messages sur la route, afin d'optimiser la vitesse de transport**
-* UDP est par exemple très utilisé dans les jeux en ligne (typiquement pour des FPS en ligne)
 
 ### *WAN* : Wide Area Network
 * réseau étendu
@@ -173,7 +201,7 @@
 * un port est un point d'entrée unique **sur une interface réseau**
   * donc si on a deux interfaces réseau, on a deux ports 443 (entre autres) : un sur chaque interface
 * on peut demander à des applications "d'écouter" sur un ou plusieurs ports
-* par exemple, pour un site web, on demande souvent au serveur Web d'écouter sur le port 443 pour HTTPS
+* *par exemple, pour un site web, on demande souvent au serveur Web d'écouter sur le port 443 pour HTTPS*
 
 ### Routage ou *routing*
 * c'est le fait de mettre en place et de configurer un [routeur](#routeur)
@@ -206,10 +234,15 @@
   * c'est la route à prendre quand on connaît pas de routes spécifiques pour une adresse donnée
   * c'est le panneau "Toutes directions" quoi !
   
-* **le routeur est un mec sympa : il connaît les routes, mais surtout, il les partage dans les réseaux auxquels il est connecté**
+* **le routeur est un mec sympa : il connaît les routes, mais surtout, il vous permet d'y accéder**
   * chez vous, le routeur c'est votre Box
   * elle connaît une route pour aller dans votre LAN et une route pour aller sur Internet
   * et votre box est sympa : elle vous a dit que si vous aviez besoin d'aller sur internet, vous pouviez passer par elle
+
+* **EDIT** : un routeur est un équipement qui fait de l'*IP Forwarding* :
+  * ça veut dire qu'il peut traiter des [paquets IP](5.md#vocabulaire) qui ne lui sont pas destinés
+  * afin de les faire transiter de réseau en réseau
+  * **il suffit d'activer ça sur votre PC pour qu'il devienne un routeur** 
 
 ### *Stack réseau* ou *stack TCP/IP* ou Pile réseau
 * désigne toutes les applications d'une machine qui s'occupent du réseau
