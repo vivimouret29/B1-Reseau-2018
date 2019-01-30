@@ -8,6 +8,7 @@
 ## Protocoles
 
 ### *Ethernet*
+* un *message Ethernet* est une **trame Ethernet**
 * utilisé pour la *commutation de paquets*
 * Ethernet définit le format des trames Ethernet qui circulent sur le réseau (entre autres)
   * [MAC](#mac--media-access-control) source d'un message
@@ -30,6 +31,7 @@
 
 > on parle ici d'IPv4 (on verra peut-êtr eun peu d'IPv6 ensemble)
 
+* un *message IP* est un **paquet IP**
 * protocole utilisé pour discuter à travers des réseaux
 * une *adresse IP* peut être "portée" par une *carte réseau*
 * une *adresse IP* est composée de 32 bits
@@ -43,6 +45,7 @@
 
 ### *TCP* : Transmission Control Protocol
 
+* un *message TCP* est un **datagramme TCP**
 * permet d'établir un tunnel entre deux personnes, généralement un client et un serveur
 * une fois le tunnel établi, le client et le serveur peuvent échanger des données
 * voyez TCP comme un échange de messages (comme des textos) **avec accusé de réception**
@@ -51,6 +54,7 @@
 
 ### *UDP* : User Datagram Protocol
 
+* un *message UDP* est un **datagramme UDP**
 * permet d'échanger des données, générélament entre un client et un serveur
 * aucun tunnel n'est établi, les données sont envoyées **sans accusé de réception**
 * **on utilise UDP lorsqu'on s'en fiche de perdre certains messages sur la route, afin d'optimiser la vitesse de transport**
@@ -112,16 +116,21 @@
 * les RFCs peuvent écrit par n'importe qui et sont des documents publics
 * comme sont l'indique, une RFC a pour but d'être lue et commentée
 * si les gens la lisent, la commentent, la complètent, une RFC finit par contenir des choses intéressantes
-* les protocoles que vous connaissez ont tous été définis dans des RFCs :
+* **voyez-les comme des manuels pour construire des choses, ce sont juste des plans**
+  * un plan pour construire une messagerie sécurisée, par exemple !
+* les protocoles que vous connaissez ont tous été définis dans des RFCs, entre autres :
   * [IP](#ip--internet-protocol) : [RFC 791](https://tools.ietf.org/html/rfc791)
   * Allocation d'adresses privées : [RFC 1918](https://tools.ietf.org/html/rfc1918)
-  * HTTP : [RFC 2616](https://tools.ietf.org/html/rfc2616)
-  * TCP : [RFC 793](https://tools.ietf.org/html/rfc793)
-  * etc.
+  * [HTTP](#http--hypertext-transfer-protocol) : [RFC 2616](https://tools.ietf.org/html/rfc2616)
+  * [TCP](#tcp--transmission-control-protocol) : [RFC 793](https://tools.ietf.org/html/rfc793)
+  * [Ethernet](#ethernet)
+    * un extrait de l'intro, c'est cadeau : 
+> "The world is a jungle in general, and the networking game contributes many animals."
 
 ### *WAN* : Wide Area Network
 * réseau étendu
 * celui que vous utilisez le plus est Internet
+  * les équipements qui s'y trouvent portent des [adresses publiques](./3.md#ip-privéespubliques)
 
 ## Notions
 
@@ -153,10 +162,10 @@
 * le cours 1 contient [un passage avec des calculs binaires](./1.md#3-exemple-de-manipulation-dip-vue-en-cours)
  
 ### Carte réseau (ou interface réseau)
-* carte physique dans une machine (ou virtuelle, on verra ça plus tard)
-* porte forcément une adresse MAC
+* carte physique dans une machine (ou virtuelle)
+* porte forcément une [adresse MAC](#mac--media-access-control)
   * pour une interface physique, la MAC est gravée physiquement sur le périphérique : on ne peut pas la changer
-* peut porter une adresse IP et ainsi "être dans un réseau"
+* peut porter une [adresse IP](#ip--internet-protocol) et ainsi "être dans un réseau"
 * dans nos PCs du quotidien, on en a au moins une : la carte WiFi
 
 ### Loopback
@@ -228,7 +237,10 @@
 
 * son rôle est de connaître des "routes" et d'en faire profiter les réseaux auxquels il est connecté
   * une "route" est un chemin pour aller vers un réseau
-  * par exemple, une route c'est : "pour aller dans 192.168.1.0/24, tu passes par l'interface numéro 4"
+  * par exemple, une route c'est : 
+    * "pour aller dans `192.168.1.0/24`,
+    * tu passes par l'[interface réseau](#carte-réseau-ou-interface-réseau) numéro 4,
+    * en passant par la [passerelle](#passerelle-ou-gateway) `192.168.0.254/24`"
 
 * il existe une route spéciale : la **route par défaut** 
   * c'est la route à prendre quand on connaît pas de routes spécifiques pour une adresse donnée
@@ -236,12 +248,13 @@
   
 * **le routeur est un mec sympa : il connaît les routes, mais surtout, il vous permet d'y accéder**
   * chez vous, le routeur c'est votre Box
-  * elle connaît une route pour aller dans votre LAN et une route pour aller sur Internet
+  * elle connaît une route pour aller dans votre [LAN](#lan--local-area-network) et une route pour aller sur Internet (le [WAN](#wan--wide-area-network))
   * et votre box est sympa : elle vous a dit que si vous aviez besoin d'aller sur internet, vous pouviez passer par elle
 
 * **EDIT** : un routeur est un équipement qui fait de l'*IP Forwarding* :
   * ça veut dire qu'il peut traiter des [paquets IP](5.md#vocabulaire) qui ne lui sont pas destinés
   * afin de les faire transiter de réseau en réseau
+  * par exemple, vos paquets, quand vous parlez à google, ils sont pas destinés au routeur, m'kay ?
   * **il suffit d'activer ça sur votre PC pour qu'il devienne un routeur** 
 
 ### *Stack réseau* ou *stack TCP/IP* ou Pile réseau
