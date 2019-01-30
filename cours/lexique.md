@@ -309,6 +309,18 @@ ip a
 * on a effectué des simples connexions entre vos PCs en cours
 * mais on peut aussi s'en servir pour se connecter à un serveur web, aucun problème
   * faut savoir parler l'[HTTP](#http--hypertext-transfer-protocol) par contre ehe
+  
+* pour agir comme un serveur (Linux) :
+```
+# Lance netcat pour qu'il "écoute" sur le port 9999 de l'IP 10.1.0.10
+# -l comme "listen"
+nc -l 10.1.0.10 9999
+```
+* pour agir comme un client, et se connecter à un serveur (Linux) : 
+```
+# Pour se connecter au serveur 10.1.0.10 sur le port 9999 
+nc 10.1.0.10 9999
+```
 
 ### `netstat` ou `ss`
 * outils permettant de lister les connexions actives d'une machine
