@@ -123,7 +123,7 @@
   * Allocation d'adresses privées : [RFC 1918](https://tools.ietf.org/html/rfc1918)
   * [HTTP](#http--hypertext-transfer-protocol) : [RFC 2616](https://tools.ietf.org/html/rfc2616)
   * [TCP](#tcp--transmission-control-protocol) : [RFC 793](https://tools.ietf.org/html/rfc793)
-  * [Ethernet](#ethernet)
+  * [Ethernet](#ethernet) : [RFC 826](https://tools.ietf.org/html/rfc826), [RFC 894](https://tools.ietf.org/html/rfc894)
     * un extrait de l'intro, c'est cadeau : 
 > "The world is a jungle in general, and the networking game contributes many animals."
 
