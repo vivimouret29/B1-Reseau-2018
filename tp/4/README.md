@@ -233,9 +233,11 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
 
 1. vider la table ARP de **toutes** vos machines
 2. sur `client1`
+    * vous DEVEZ utiliser SSH
     * afficher la table ARP
     * **expliquer la seule ligne visible** (hint : vous êtes connecté à cette VM, non ?... ;) )
 3. sur `server1`
+    * vous DEVEZ utiliser SSH
     * afficher la table ARP
     * **expliquer la seule ligne visible** (hint : celle-la aussi non ?)
 4. sur `client1`
