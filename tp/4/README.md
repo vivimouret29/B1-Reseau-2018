@@ -215,7 +215,9 @@ Pour ce faire :
 
 **Rappel : SELinux doit être désactivé**  
 
-**Rappel : Votre carte NAT doit être désactivée**
+**Rappel : Votre carte NAT doit être désactivée** (sauf contre-indication)
+
+**Rappel : vous DEVEZ utiliser SSH pour contrôler vos VMs**
 
 ## 1. ARP
 
@@ -226,6 +228,8 @@ Pour toutes les actions liées à la table ARP sous CentOS, [c'est ici que ça s
 > **Il est inutile de juste dérouler le truc, inutile** ***d'apprendre***. **Essayez de bien** ***comprendre*** **et ça deviendra parfaitement naturel.**
 
 ### **A. Manip 1**
+
+**Rappel : vous DEVEZ utiliser SSH pour contrôler vos VMs**
 
 1. vider la table ARP de **toutes** vos machines
 2. sur `client1`
