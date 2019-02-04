@@ -118,7 +118,7 @@ Lancez toutes les machines (ou une par une). Je vous conseille de vous posez tra
 
 **Prenez des notes de ce que vous faites.**  
 
-**Checklist VMs** (on parle de `client1.tp5.b1`, `client2.tp5.b1` et `server1.tp5.b1`) :
+**Checklist IP VMs** (on parle de `client1.tp5.b1`, `client2.tp5.b1` et `server1.tp5.b1`) :
 * [X] Désactiver SELinux
   * déja fait dans le patron
 * [X] Installation de certains paquets réseau
@@ -130,24 +130,30 @@ Lancez toutes les machines (ou une par une). Je vous conseille de vous posez tra
   * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md#changer-son-nom-de-domaine)
 
-**Checklist Routeurs** (on parle de `router1.tp5.b1` et `router2.tp5.b1`):
+**Checklist IP Routeurs** (on parle de `router1.tp5.b1` et `router2.tp5.b1`):
 * [ ] [Définition des IPs statiques]()
 * [ ] [Définition du nom de domaine]()
 
 **Checklist routes** (on parle de toutes les machines)
-[ ] `router1.tp5.b1`  
+* `router1.tp5.b1`  
   * directement connecté à `net1` et `net12`  
   * route à ajouter : `net2`  
-[ ] `router2.tp5.b1`  
+* `router2.tp5.b1`  
   * directement connecté à `net2` et `net12`  
   * route à ajouter : `net1`  
-[ ] `server1.tp5.b1`  
+* `server1.tp5.b1`  
   * directement connecté à `net1`  
   * route à ajouter : `net2`  
-[ ] `client1.tp5.b1`  
+* `client1.tp5.b1`  
   * directement connecté à `net2`  
   * route à ajouter : `net1`  
-[ ] `router1.tp5.b1`  
+* `router1.tp5.b1`  
   * directement connecté à `net2`  
   * route à ajouter : `net1`  
+
+Pour tester : 
+* les deux clients doivent pouvoir ping `server1.tp5.b1`
+* et réciproquement
+
+> **Notez que les clients/serveurs n'ont pas de route vers `net12`**. Et ui. C'est un réseau privé que seuls les routeurs connaissent. 
 
