@@ -97,11 +97,13 @@ Server1 --net1-- R1 --net12-- R2 --net2-- Sw
 ```
 
 **Réseaux :**
+
 * `net1` : `10.5.1.0/24`
 * `net2` : `10.5.2.0/24`
 * `net12` : **votre choix** (à justifier)
 
 **Machines :**
+
 Machine | `net1` | `net2` | `net12`
 --- | --- | --- | ---
 `client1.tp5.b1` | X | `10.5.2.10` | X
@@ -134,18 +136,18 @@ Lancez toutes les machines (ou une par une). Je vous conseille de vous posez tra
 
 **Checklist routes** (on parle de toutes les machines)
 [ ] `router1.tp5.b1`  
-    * directement connecté à `net1` et `net12`
-    * route à ajouter : `net2`
+* directement connecté à `net1` et `net12`
+* route à ajouter : `net2`
 [ ] `router2.tp5.b1`  
-    * directement connecté à `net2` et `net12`
-    * route à ajouter : `net1`
+* directement connecté à `net2` et `net12`
+* route à ajouter : `net1`
 [ ] `server1.tp5.b1`  
-    * directement connecté à `net1`
-    * route à ajouter : `net2`
+* directement connecté à `net1`
+* route à ajouter : `net2`
 [ ] `client1.tp5.b1`  
-    * directement connecté à `net2`
-    * route à ajouter : `net1`
+* directement connecté à `net2`
+* route à ajouter : `net1`
 [ ] `router1.tp5.b1`  
-    * directement connecté à `net2`
-    * route à ajouter : `net1`
+* directement connecté à `net2`
+* route à ajouter : `net1`
 
